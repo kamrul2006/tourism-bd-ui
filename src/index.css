@@ -1,1 +1,7 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
+
+.chicleRegular {
+  font-family: "Chicle", serif;
+  font-style: normal;
+}

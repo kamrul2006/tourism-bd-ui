@@ -2,8 +2,11 @@ import React from 'react'
 
 const RootLayouts = () => {
     return (
-        <div>
+        <div className=''>
             hello world
+            <p className='chicleRegular'>
+                hjfgfdgj
+            </p>
         </div>
     )
 }
