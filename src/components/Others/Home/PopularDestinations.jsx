@@ -5,51 +5,44 @@ const destinations = [
         id: 1,
         name: "Cox’s Bazar",
         img: "https://speedholidays.com.bd/wp-content/uploads/2019/11/Coxs-Bazar-3.jpg",
-        desc: "World’s longest natural sea beach",
+        desc: "Longest Sea Beach",
     },
     {
         id: 2,
         name: "Sajek Valley",
         img: "https://www.thetouristplace.com/wp-content/uploads/2021/12/Sajek-Valley-Cloud.jpg",
-        desc: "The queen of hills in Bangladesh",
+        desc: "Misty Mountains",
     },
     {
         id: 3,
         name: "Sundarbans",
         img: "https://upload.wikimedia.org/wikipedia/commons/2/23/Sundarban_Tiger.jpg",
-        desc: "Largest mangrove forest",
+        desc: "Wildlife Adventure",
     },
     {
         id: 4,
         name: "Saint Martin",
         img: "https://upload.wikimedia.org/wikipedia/commons/d/db/Saint_Martins_Island_with_boats_in_foreground.jpg",
-        desc: "The only coral island",
+        desc: "Coral Island",
     },
-    // {
-    //     id: 5,
-    //     name: "Srimangal",
-    //     img: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Sreemangal_tea_garden_2017-08-20.jpg",
-    //     desc: "Tea capital of Bangladesh",
-    // },
-    // {
-    //     id: 6,
-    //     name: "Bandarban",
-    //     img: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Bandarban_Landscape_21.jpg",
-    //     desc: "Hills, waterfalls & adventure",
-    // },
 ];
+
 export default function PopularDestinations() {
     return (
         <section className="py-20 bg-[#f7f4ef]">
             <div className="max-w-7xl mx-auto px-6">
 
-                {/* Title */}
-                <h2 className="text-3xl md:text-4xl font-bold text-center text-emerald-900 mb-10">
-                    Popular Destinations
-                </h2>
+                {/* Title in middle with gray line */}
+                <div className="flex items-center justify-center mb-12">
+                    <div className="h-0.5 w-24 bg-gray-300"></div>
+                    <h2 className="mx-4 chicleRegular text-3xl md:text-5xl  text-emerald-900">
+                        Popular Destinations
+                    </h2>
+                    <div className="h-0.5 w-24 bg-gray-300"></div>
+                </div>
 
                 {/* Cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {destinations.map((place) => (
                         <div
                             key={place.id}
@@ -59,19 +52,25 @@ export default function PopularDestinations() {
                             <img
                                 src={place.img}
                                 alt={place.name}
-                                className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+                                className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
                             />
 
-                            {/* Dark overlay */}
-                            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/60 transition duration-300"></div>
+                            {/* Overlay */}
+                            <div className="absolute inset-0 bg-linear-to-t from-black/95 to-black/10 transition duration-300"></div>
 
-                            {/* Place name (always visible) */}
-                            <h3 className="absolute bottom-8 left-20 chicleRegular text-white text-2xl  z-10 drop-shadow">
-                                {place.name}
-                            </h3>
+                            {/* Name + Subtitle in middle */}
+                            <div className="absolute inset-0 flex flex-col items-center justify-end mb-5 text-center z-10 transition-all duration-300 group-hover:-translate-y-6">
+                                <h3 className="chicleRegular text-white text-2xl drop-shadow">
+                                    {place.name}
+                                </h3>
+                                <div className="w-12 h-0.5 bg-orange-400 my-2"></div>
+                                <p className="text-gray-200 text-sm tracking-wide">
+                                    {place.desc}
+                                </p>
+                            </div>
 
-                            {/* Hover Content */}
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 z-10">
+                            {/* Hover Button */}
+                            <div className="absolute inset-0 flex items-end justify-center pb-6 opacity-0 group-hover:opacity-100 transition duration-300 z-10">
                                 <Link
                                     to="/destinations"
                                     className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full font-semibold shadow-md transition transform hover:scale-105"
@@ -83,14 +82,16 @@ export default function PopularDestinations() {
                     ))}
                 </div>
 
-                {/* View All Button */}
-                <div className="text-center mt-12">
+                {/* View All Button with center line like image */}
+                <div className="flex items-center justify-center mt-14">
+                    <div className="h-0.5 w-32 bg-gray-300"></div>
                     <Link
                         to="/destinations"
-                        className="bg-emerald-700 hover:bg-emerald-800 text-white px-8 py-3 rounded-full font-semibold shadow-lg transition duration-300 hover:scale-105"
+                        className="mx-4 bg-emerald-700 hover:bg-emerald-800 text-white px-2 md:px-8 py-2 md:py-3 text-xs md:text-base rounded-full font-semibold shadow-lg transition duration-300 hover:scale-105"
                     >
                         View All Places
                     </Link>
+                    <div className="h-0.5 w-32 bg-gray-300"></div>
                 </div>
 
             </div>
