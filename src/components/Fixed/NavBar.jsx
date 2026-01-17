@@ -69,13 +69,13 @@ export default function Navbar() {
                 <div className="hidden md:flex items-center gap-4">
                     <Link
                         to="/login"
-                        className="text-white border border-white/40 px-4 py-1.5 rounded-full hover:bg-white hover:text-emerald-900 transition-all duration-300"
+                        className="text-white border border-white/40 px-4 py-1.5 rounded hover:bg-white hover:text-emerald-900 transition-all duration-300"
                     >
                         Login
                     </Link>
                     <Link
                         to="/signup"
-                        className="bg-orange-500 text-white px-4 py-1.5 rounded-full hover:bg-orange-600 transition-all duration-300 shadow-lg"
+                        className="bg-orange-500 text-white px-4 py-1.5 rounded hover:bg-orange-600 transition-all duration-300 shadow-lg"
                     >
                         Sign Up
                     </Link>

@@ -73,7 +73,7 @@ export default function PopularDestinations() {
                             <div className="absolute inset-0 flex items-end justify-center pb-6 opacity-0 group-hover:opacity-100 transition duration-300 z-10">
                                 <Link
                                     to="/destinations"
-                                    className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full font-semibold shadow-md transition transform hover:scale-105"
+                                    className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded font-semibold shadow-md transition transform hover:scale-105"
                                 >
                                     Explore More
                                 </Link>
