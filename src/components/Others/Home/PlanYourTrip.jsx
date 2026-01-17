@@ -11,11 +11,11 @@ export default function PlanYourTrip() {
 
                 {/* Title */}
                 <div className="flex items-center justify-center mb-14">
-                    <div className="h-0.5 w-24 bg-gray-300"></div>
+                    <div className="h-1 rounded-full w-80 bg-linear-to-l from-gray-400 to-[#f7f4ef]"></div>
                     <h2 className="mx-4 text-3xl md:text-5xl chicleRegular text-emerald-900">
                         Plan Your Trip
                     </h2>
-                    <div className="h-0.5 w-24 bg-gray-300"></div>
+                    <div className="h-1 w-80 rounded-full bg-linear-to-r from-gray-400 to-[#f7f4ef]"></div>
                 </div>
 
                 {/* Top Cards */}

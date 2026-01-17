@@ -29,16 +29,16 @@ const destinations = [
 
 export default function PopularDestinations() {
     return (
-        <section className="py-20 bg-[#f7f4ef]">
+        <section className="pb-10 pt-20 bg-[#f7f4ef]">
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Title in middle with gray line */}
                 <div className="flex items-center justify-center mb-12">
-                    <div className="h-0.5 w-24 bg-gray-300"></div>
+                    <div className="h-1 w-80 rounded-full bg-linear-to-l from-gray-400 to-[#f7f4ef]"></div>
                     <h2 className="mx-4 chicleRegular text-3xl md:text-5xl  text-emerald-900">
                         Popular Destinations
                     </h2>
-                    <div className="h-0.5 w-24 bg-gray-300"></div>
+                    <div className="h-1 w-80 rounded-full bg-linear-to-r from-gray-400 to-[#f7f4ef]"></div>
                 </div>
 
                 {/* Cards */}
@@ -84,14 +84,14 @@ export default function PopularDestinations() {
 
                 {/* View All Button with center line like image */}
                 <div className="flex items-center justify-center mt-14">
-                    <div className="h-0.5 w-32 bg-gray-300"></div>
+
                     <Link
                         to="/destinations"
-                        className="mx-4 bg-emerald-700 hover:bg-emerald-800 text-white px-2 md:px-8 py-2 md:py-3 text-xs md:text-base rounded-full font-semibold shadow-lg transition duration-300 hover:scale-105"
+                        className="mx-4 bg-emerald-700 hover:bg-emerald-800 text-white px-2 md:px-8 py-2 md:py-3 text-xs md:text-base rounded font-semibold shadow-lg transition duration-300 hover:scale-105"
                     >
                         View All Places
                     </Link>
-                    <div className="h-0.5 w-32 bg-gray-300"></div>
+
                 </div>
 
             </div>
