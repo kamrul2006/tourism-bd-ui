@@ -6,6 +6,7 @@ import FeaturedExperience from '../components/Others/Home/FeaturedExperience'
 import CallToAction from '../components/Others/Home/CallToAction'
 import WhyChooseUs from '../components/Others/Home/WhyChooseUs'
 import InteractiveMapPreview from '../components/Others/Home/InteractiveMapPreview'
+import AchievementsStats from '../components/Others/Home/AchievementsStats'
 
 const HomePageLayOut = () => {
     return (
@@ -24,6 +25,8 @@ const HomePageLayOut = () => {
             <WhyChooseUs />
 
             <InteractiveMapPreview />
+
+            <AchievementsStats />
         </div>
     )
 }
