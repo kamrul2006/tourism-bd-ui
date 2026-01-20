@@ -9,6 +9,7 @@ import InteractiveMapPreview from '../components/Others/Home/InteractiveMapPrevi
 import AchievementsStats from '../components/Others/Home/AchievementsStats'
 import NewsletterSignup from '../components/Others/Home/NewsletterSignup'
 import FoodOfBangladesh from '../components/Others/Home/FoodOfBangladesh'
+import Partners from '../components/Others/Home/Partners'
 
 const HomePageLayOut = () => {
     return (
@@ -33,6 +34,8 @@ const HomePageLayOut = () => {
             <FoodOfBangladesh />
 
             <NewsletterSignup />
+
+            <Partners />
         </div>
     )
 }
