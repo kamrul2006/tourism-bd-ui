@@ -8,6 +8,7 @@ import WhyChooseUs from '../components/Others/Home/WhyChooseUs'
 import InteractiveMapPreview from '../components/Others/Home/InteractiveMapPreview'
 import AchievementsStats from '../components/Others/Home/AchievementsStats'
 import NewsletterSignup from '../components/Others/Home/NewsletterSignup'
+import FoodOfBangladesh from '../components/Others/Home/FoodOfBangladesh'
 
 const HomePageLayOut = () => {
     return (
@@ -28,6 +29,8 @@ const HomePageLayOut = () => {
             <InteractiveMapPreview />
 
             <AchievementsStats />
+
+            <FoodOfBangladesh />
 
             <NewsletterSignup />
         </div>
