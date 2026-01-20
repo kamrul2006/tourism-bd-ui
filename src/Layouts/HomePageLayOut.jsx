@@ -19,6 +19,8 @@ const HomePageLayOut = () => {
 
             <PopularDestinations />
 
+            <Partners />
+
             <PlanYourTrip />
 
             <FeaturedExperience />
@@ -35,7 +37,6 @@ const HomePageLayOut = () => {
 
             <NewsletterSignup />
 
-            <Partners />
         </div>
     )
 }
