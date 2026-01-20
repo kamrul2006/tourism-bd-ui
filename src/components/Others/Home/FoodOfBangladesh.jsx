@@ -29,16 +29,18 @@ export default function FoodOfBangladesh() {
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Title with line */}
-                <div className="flex items-center justify-center mb-12">
-                    <div className="h-0.5 w-24 bg-gray-300"></div>
-                    <h2 className="mx-4 text-3xl md:text-4xl font-bold text-emerald-900">
-                        🍛 Food of Bangladesh
+                <div className="flex items-center justify-center mb-5">
+
+                    <div className="h-1 rounded-full w-80 bg-linear-to-l from-gray-400 to-[#f7f4ef]"></div>
+                    <h2 className="mx-4 text-3xl md:text-5xl chicleRegular text-emerald-900">
+                        Food of Bangladesh
                     </h2>
-                    <div className="h-0.5 w-24 bg-gray-300"></div>
+                    <div className="h-1 w-80 rounded-full bg-linear-to-r from-gray-400 to-[#f7f4ef]"></div>
+
                 </div>
 
                 {/* Subtitle */}
-                <p className="text-center text-gray-600 mb-12">
+                <p className="text-center text-emerald-900 mb-8 font-bold italic font-serif">
                     Travel + Food = A Powerful Experience. Taste the soul of Bangladesh.
                 </p>
 
