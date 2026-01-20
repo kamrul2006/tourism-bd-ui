@@ -1,4 +1,3 @@
-import React from 'react'
 import TipsHero from '../components/Others/Tips/THero'
 
 const TipsPageLayOuts = () => {
