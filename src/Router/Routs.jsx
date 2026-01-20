@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 import RootLayouts from "../Layouts/RootLayouts";
 import HomePageLayOut from "../Layouts/HomePageLayOut";
 import Error404 from "../components/Fixed/Error404";
+import TipsPageLayOuts from "../Layouts/TipsPageLayOuts";
 
 
 export const router = createBrowserRouter([
@@ -13,6 +14,10 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <HomePageLayOut />
+            },
+            {
+                path: '/tips',
+                element: <TipsPageLayOuts />
             },
         ]
     },
