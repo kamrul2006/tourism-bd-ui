@@ -1,10 +1,14 @@
 export default function Partners() {
     const partners = [
-        { id: 1, name: "SkyFly Airlines", logo: "https://dummyimage.com/200x100/1e293b/ffffff&text=SkyFly" },
-        { id: 2, name: "Bangla Hotels", logo: "https://dummyimage.com/200x100/065f46/ffffff&text=Bangla+Hotels" },
-        { id: 3, name: "GoRide Transport", logo: "https://dummyimage.com/200x100/f97316/ffffff&text=GoRide" },
-        { id: 4, name: "TravelX", logo: "https://dummyimage.com/200x100/2563eb/ffffff&text=TravelX" },
-        { id: 5, name: "SeaWays Ferry", logo: "https://dummyimage.com/200x100/0f766e/ffffff&text=SeaWays" },
+        { id: 1, name: "SkyFly Airlines", logo: "/Logo/Partners/li.png" },
+        { id: 2, name: "Bangla Hotels", logo: "/Logo/Partners/lv.png" },
+        { id: 3, name: "GoRide Transport", logo: "/Logo/Partners/lii.png" },
+        { id: 4, name: "TravelX", logo: "/Logo/Partners/liv.png" },
+        { id: 5, name: "SeaWays Ferry", logo: "/Logo/Partners/liii.png" },
+        { id: 10, name: "SkyFly Airlines", logo: "/Logo/Partners/li.png" },
+        { id: 20, name: "Bangla Hotels", logo: "/Logo/Partners/lv.png" },
+        { id: 40, name: "TravelX", logo: "/Logo/Partners/liv.png" },
+        { id: 50, name: "SeaWays Ferry", logo: "/Logo/Partners/liii.png" },
     ];
 
     return (
