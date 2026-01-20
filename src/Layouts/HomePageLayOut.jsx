@@ -7,6 +7,7 @@ import CallToAction from '../components/Others/Home/CallToAction'
 import WhyChooseUs from '../components/Others/Home/WhyChooseUs'
 import InteractiveMapPreview from '../components/Others/Home/InteractiveMapPreview'
 import AchievementsStats from '../components/Others/Home/AchievementsStats'
+import NewsletterSignup from '../components/Others/Home/NewsletterSignup'
 
 const HomePageLayOut = () => {
     return (
@@ -27,6 +28,8 @@ const HomePageLayOut = () => {
             <InteractiveMapPreview />
 
             <AchievementsStats />
+
+            <NewsletterSignup />
         </div>
     )
 }
