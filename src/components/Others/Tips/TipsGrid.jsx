@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const ITEMS_PER_PAGE = 12;
-
 export default function TipsGrid() {
     const [tips, setTips] = useState([]);
     const [activeCategory, setActiveCategory] = useState("All");
-    const [currentPage, setCurrentPage] = useState(1);
 
     const categories = [
         "All",
@@ -14,44 +11,32 @@ export default function TipsGrid() {
         "Budget",
         "Safety",
         "Culture",
-        "Food",
-        "Adventure"
+        "Adventure",
+        "Food"
     ];
 
     useEffect(() => {
         fetch("/data/tips.json")
-            .then((res) => res.json())
-            .then((data) => setTips(data));
+            .then(res => res.json())
+            .then(data => setTips(data));
     }, []);
 
-    // Filter by category
     const filteredTips =
         activeCategory === "All"
             ? tips
-            : tips.filter((tip) => tip.category === activeCategory);
-
-    // Pagination logic
-    const totalPages = Math.ceil(filteredTips.length / ITEMS_PER_PAGE);
-    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const currentTips = filteredTips.slice(
-        startIndex,
-        startIndex + ITEMS_PER_PAGE
-    );
+            : tips.filter(tip => tip.category === activeCategory);
 
     return (
         <section className="py-20 bg-[#f7f4ef]">
             <div className="max-w-7xl mx-auto px-6">
 
-                {/* Category Buttons */}
+                {/* Categories */}
                 <div className="flex flex-wrap justify-center gap-3 mb-12">
-                    {categories.map((cat) => (
+                    {categories.map(cat => (
                         <button
                             key={cat}
-                            onClick={() => {
-                                setActiveCategory(cat);
-                                setCurrentPage(1);
-                            }}
-                            className={`px-6 py-2 rounded-full border transition font-semibold
+                            onClick={() => setActiveCategory(cat)}
+                            className={`px-6 py-2 rounded-full font-semibold transition
                 ${activeCategory === cat
                                     ? "bg-emerald-700 text-white"
                                     : "bg-white text-gray-700 hover:bg-emerald-100"
@@ -62,64 +47,54 @@ export default function TipsGrid() {
                     ))}
                 </div>
 
-                {/* Cards */}
+                {/* Cards Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {currentTips.map((tip) => (
+
+                    {filteredTips.map(tip => (
                         <div
                             key={tip.id}
-                            className="group relative rounded-xl overflow-hidden shadow-lg cursor-pointer"
+                            className="group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer h-105"
                         >
                             {/* Image */}
                             <img
                                 src={tip.image}
                                 alt={tip.title}
-                                className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                             />
 
                             {/* Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/95 to-black/10"></div>
+                            <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent"></div>
 
-                            {/* Title + Category */}
-                            <div className="absolute inset-0 flex flex-col items-center justify-end mb-5 text-center z-10 transition-all duration-300 group-hover:-translate-y-6">
-                                <h3 className="chicleRegular text-white text-xl drop-shadow">
+                            {/* Badge */}
+                            <span className="absolute top-4 left-4 bg-emerald-600 text-white text-xs px-3 py-1 rounded-full z-10">
+                                {tip.badge}
+                            </span>
+
+                            {/* Content */}
+                            <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
+                                <h3 className="text-white text-3xl font-bold mb-1">
                                     {tip.title}
                                 </h3>
-                                <div className="w-12 h-0.5 bg-orange-400 my-2"></div>
-                                <p className="text-gray-200 text-sm tracking-wide">
-                                    {tip.category}
-                                </p>
-                            </div>
 
-                            {/* Hover Button */}
-                            <div className="absolute inset-0 flex items-end justify-center pb-6 opacity-0 group-hover:opacity-100 transition duration-300 z-10">
+                                <p className="text-gray-200 text-lg my-2 border-y-2 w-fit py-1 border-gray-500">
+                                    {tip.shortDesc}
+                                </p>
+
+                                <p className="text-gray-400  mb-3">
+                                    {tip.date}
+                                </p>
+
                                 <Link
                                     to={`/tips/${tip.id}`}
-                                    className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded font-semibold shadow-md transition transform hover:scale-105"
+                                    className="inline-block bg-orange-500 hover:bg-orange-600 text-white text-sm px-4 py-2 rounded-md font-semibold transition"
                                 >
                                     Read More
                                 </Link>
                             </div>
                         </div>
                     ))}
-                </div>
 
-                {/* Pagination */}
-                <div className="flex justify-center mt-12 gap-2">
-                    {Array.from({ length: totalPages }).map((_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => setCurrentPage(index + 1)}
-                            className={`px-4 py-2 rounded-full font-semibold transition
-                ${currentPage === index + 1
-                                    ? "bg-emerald-700 text-white"
-                                    : "bg-white text-gray-700 hover:bg-emerald-100"
-                                }`}
-                        >
-                            {index + 1}
-                        </button>
-                    ))}
                 </div>
-
             </div>
         </section>
     );
