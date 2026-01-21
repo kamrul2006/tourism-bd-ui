@@ -68,7 +68,7 @@ export default function TipsGrid() {
                     {currentTips.map((tip) => (
                         <div
                             key={tip.id}
-                            className="group relative rounded-2xl overflow-hidden shadow-xl cursor-pointer h-[430px]"
+                            className="group relative rounded-2xl overflow-hidden shadow-xl cursor-pointer h-107.5"
                         >
                             {/* Image */}
                             <img
@@ -78,7 +78,7 @@ export default function TipsGrid() {
                             />
 
                             {/* Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                            <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent"></div>
 
                             {/* Badge */}
                             <span className="absolute top-4 left-4 bg-emerald-600 text-white text-xs px-3 py-1 rounded-full z-10 shadow">
