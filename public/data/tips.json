@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "title": "Best Time to Visit Bangladesh",
+        "category": "Essentials",
+        "image": "/images/tips/best-time.jpg",
+        "shortDesc": "Find the perfect season for beaches, hills and city travel.",
+        "description": "Bangladesh has three main seasons: winter (November–February), summer (March–May), and monsoon (June–October). Winter is the best time to travel because the weather is dry, cool, and comfortable. Cox’s Bazar, Sajek Valley, Sundarbans, and Saint Martin’s Island are most enjoyable during this time. Summer is hot but good for hill areas, while monsoon is best for greenery lovers but risky due to heavy rain and floods."
+    },
+    {
+        "id": 2,
+        "title": "Travel on a Low Budget",
+        "category": "Budget",
+        "image": "/images/tips/budget.jpg",
+        "shortDesc": "Explore Bangladesh smartly while spending less money.",
+        "description": "Use public buses and trains instead of private transport. Stay in local guesthouses or budget hotels. Eat street food and local restaurants. Book tickets early to get cheaper prices. Travel in groups to reduce accommodation and transport costs."
+    },
+    {
+        "id": 3,
+        "title": "Safety Tips for Tourists",
+        "category": "Safety",
+        "image": "/images/tips/safety.jpg",
+        "shortDesc": "Stay safe and travel with confidence.",
+        "description": "Always keep copies of your documents. Avoid traveling alone late at night. Use registered transport services. Keep emergency contacts saved. Respect local rules and culture to avoid unwanted situations."
+    },
+    {
+        "id": 4,
+        "title": "What to Pack for Bangladesh",
+        "category": "Essentials",
+        "image": "/images/tips/packing.jpg",
+        "shortDesc": "Essential packing checklist for a comfortable trip.",
+        "description": "Pack light cotton clothes, sunscreen, insect repellent, power bank, reusable water bottle, umbrella, and basic medicines. Modest clothing is recommended, especially in rural areas."
+    },
+    {
+        "id": 5,
+        "title": "Local Culture & Etiquette",
+        "category": "Culture",
+        "image": "/images/tips/culture.jpg",
+        "shortDesc": "Understand local customs before visiting.",
+        "description": "Respect elders, dress modestly, remove shoes before entering homes or mosques, and greet with a polite smile. Hospitality is very strong in Bangladesh."
+    },
+    {
+        "id": 6,
+        "title": "Top Street Foods to Try",
+        "category": "Food",
+        "image": "/images/tips/food.jpg",
+        "shortDesc": "Must-try foods during your trip.",
+        "description": "Try Fuchka, Chotpoti, Jhalmuri, Biriyani, and Pitha. Always choose busy and clean food stalls."
+    }
+]
