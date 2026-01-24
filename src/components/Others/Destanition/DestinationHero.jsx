@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function DestinationHero() {
     return (
         <section
@@ -24,13 +26,12 @@ export default function DestinationHero() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg transition">
-                        Start Exploring
-                    </button>
+                    <Link to={'/tips'}>
+                        <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded font-semibold shadow-lg transition">
+                            Learn More Info
+                        </button>
+                    </Link>
 
-                    <button className="bg-white/20 backdrop-blur-md border border-white/40 text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/30 transition">
-                        View Popular Places
-                    </button>
                 </div>
             </div>
 
