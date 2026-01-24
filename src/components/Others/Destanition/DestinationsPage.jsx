@@ -52,7 +52,8 @@ export default function PopularDestinations() {
 
                             {/* Content */}
                             <div className="absolute bottom-0 p-4 z-10 text-white">
-                                <h3 className="text-lg md:text-3xl chicleRegular">{place.name}</h3>
+                                <h3 className="text-lg md:text-3xl chicleRegular border-b-2 w-fit pr-4  py-2 border-orange-700">{place.name}</h3>
+
                                 <p className="text-sm md:text-base text-gray-200 mb-3 h-6 overflow-hidden my-2">{place.desc}</p>
                                 <Link
                                     to={`/destinations/${place.id}`}

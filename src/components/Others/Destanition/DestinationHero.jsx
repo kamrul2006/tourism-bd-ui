@@ -6,7 +6,7 @@ export default function DestinationHero() {
             className="relative h-[90vh] w-full flex items-center justify-center"
             style={{
                 backgroundImage:
-                    "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=80')",
+                    "url('/images/Des/dbg.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
             }}
