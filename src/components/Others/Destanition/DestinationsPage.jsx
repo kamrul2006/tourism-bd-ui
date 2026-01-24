@@ -38,7 +38,7 @@ export default function PopularDestinations() {
                     {currentDestinations.map((place) => (
                         <div
                             key={place.id}
-                            className="group relative rounded-xl overflow-hidden shadow-lg cursor-pointer h-[280px]"
+                            className="group relative rounded-xl overflow-hidden shadow-lg cursor-pointer h-96"
                         >
                             {/* Image */}
                             <img
@@ -48,12 +48,12 @@ export default function PopularDestinations() {
                             />
 
                             {/* Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+                            <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent"></div>
 
                             {/* Content */}
                             <div className="absolute bottom-0 p-4 z-10 text-white">
-                                <h3 className="text-lg font-bold">{place.name}</h3>
-                                <p className="text-sm text-gray-200 mb-3">{place.desc}</p>
+                                <h3 className="text-lg md:text-3xl chicleRegular">{place.name}</h3>
+                                <p className="text-sm md:text-base text-gray-200 mb-3 h-6 overflow-hidden my-2">{place.desc}</p>
                                 <Link
                                     to={`/destinations/${place.id}`}
                                     className="bg-orange-500 hover:bg-orange-600 text-white text-xs px-4 py-2 rounded font-semibold"
