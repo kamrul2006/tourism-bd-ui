@@ -1,9 +1,10 @@
 import React from 'react'
+import DestinationHero from '../components/Others/Destanition/DestinationHero'
 
 const DestinationsPageLAyOut = () => {
     return (
         <div>
-            hi
+            <DestinationHero />
         </div>
     )
 }
