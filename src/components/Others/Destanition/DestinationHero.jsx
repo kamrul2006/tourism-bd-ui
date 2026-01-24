@@ -14,7 +14,7 @@ export default function DestinationHero() {
 
             {/* Content */}
             <div className="relative z-10 text-center max-w-4xl px-6">
-                <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+                <h1 className="text-4xl md:text-6xl text-white leading-tight mb-6 chicleRegular">
                     Explore the Top Destinations of Bangladesh
                 </h1>
 

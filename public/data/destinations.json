@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "name": "Cox’s Bazar",
+        "desc": "World’s longest natural sandy beach",
+        "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+    },
+    {
+        "id": 2,
+        "name": "Sajek Valley",
+        "desc": "Hill paradise with clouds and sunsets",
+        "image": "https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+    },
+    {
+        "id": 3,
+        "name": "Sundarbans",
+        "desc": "Largest mangrove forest and Royal Bengal Tigers",
+        "image": "https://images.unsplash.com/photo-1543248939-7c9b6c6d6aa1"
+    },
+    {
+        "id": 4,
+        "name": "Saint Martin",
+        "desc": "Only coral island of Bangladesh",
+        "image": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429"
+    },
+    {
+        "id": 5,
+        "name": "Rangamati",
+        "desc": "Hill district with lakes and natural beauty",
+        "image": "https://images.unsplash.com/photo-1601493700631-2b16a4c3bb9f"
+    },
+    {
+        "id": 6,
+        "name": "Srimangal",
+        "desc": "Tea capital of Bangladesh",
+        "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+    },
+    {
+        "id": 7,
+        "name": "Kuakata Beach",
+        "desc": "Sunrise and sunset at the same beach",
+        "image": "https://images.unsplash.com/photo-1500534314209-3cc5c7d73a06"
+    },
+    {
+        "id": 8,
+        "name": "Paharpur",
+        "desc": "UNESCO World Heritage Buddhist Monastery",
+        "image": "https://images.unsplash.com/photo-1604580864964-0462f5d8b1c6"
+    },
+    {
+        "id": 9,
+        "name": "Nilgiri",
+        "desc": "Cloudy mountains and panoramic views",
+        "image": "https://images.unsplash.com/photo-1524492412937-b28074a5d7da"
+    },
+    {
+        "id": 10,
+        "name": "Bichanakandi",
+        "desc": "Crystal water and stone streams",
+        "image": "https://images.unsplash.com/photo-1593693397690-362cb9666fc2"
+    },
+    {
+        "id": 11,
+        "name": "Jaflong",
+        "desc": "Tea gardens and river views",
+        "image": "https://images.unsplash.com/photo-1584943964606-6d9a0d64cc1d"
+    },
+    {
+        "id": 12,
+        "name": "Bandarban",
+        "desc": "Adventure hills and waterfalls",
+        "image": "https://images.unsplash.com/photo-1570529475831-1c9e4a3c5b45"
+    },
+    {
+        "id": 13,
+        "name": "Mahasthangarh",
+        "desc": "Ancient archaeological site",
+        "image": "https://images.unsplash.com/photo-1604081085978-5f54c0db1a4d"
+    },
+    {
+        "id": 14,
+        "name": "Ratargul Swamp Forest",
+        "desc": "Only swamp forest of Bangladesh",
+        "image": "https://images.unsplash.com/photo-1600078882756-56f9cbbd4228"
+    },
+    {
+        "id": 15,
+        "name": "Nijhum Dwip",
+        "desc": "Island of deer and tranquility",
+        "image": "https://images.unsplash.com/photo-1500534623283-312aade485b7"
+    }
+]
