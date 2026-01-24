@@ -3,6 +3,7 @@ import RootLayouts from "../Layouts/RootLayouts";
 import HomePageLayOut from "../Layouts/HomePageLayOut";
 import Error404 from "../components/Fixed/Error404";
 import TipsPageLayOuts from "../Layouts/TipsPageLayOuts";
+import DestinationsPageLAyOut from "../Layouts/DestinationsPageLAyOut ";
 
 
 export const router = createBrowserRouter([
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
             {
                 path: '/tips',
                 element: <TipsPageLayOuts />
+            },
+            {
+                path: '/destinations',
+                element: <DestinationsPageLAyOut />
             },
         ]
     },
