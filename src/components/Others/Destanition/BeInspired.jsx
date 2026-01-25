@@ -73,7 +73,7 @@ export default function BeInspired() {
 
                             <Link
                                 to="/planner"
-                                className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold shadow-md transition transform hover:scale-105"
+                                className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded font-semibold shadow-md transition transform hover:scale-105"
                             >
                                 Start Planning
                             </Link>

@@ -87,11 +87,9 @@ export default function TipsGrid() {
 
                             {/* Content */}
                             <div className="absolute bottom-0 left-0 right-0 p-5 z-10 transition-all duration-300 group-hover:-translate-y-2">
-                                <h3 className="text-white text-xl font-bold mb-1 leading-snug">
+                                <h3 className="text-white text-xl font-bold mb-1 leading-snug border-b-2 border-amber-600 w-fit pb-2 pr-2">
                                     {tip.title}
                                 </h3>
-
-                                <div className="w-12 h-0.5 bg-orange-400 mb-2"></div>
 
                                 <p className="text-gray-200 text-sm mb-1">
                                     {tip.shortDesc}
@@ -103,7 +101,7 @@ export default function TipsGrid() {
 
                                 <Link
                                     to={`/tips/${tip.id}`}
-                                    className="inline-block bg-orange-500 hover:bg-orange-600 text-white text-sm px-4 py-2 rounded-md font-semibold transition transform hover:scale-105"
+                                    className="inline-block bg-orange-500 hover:bg-orange-600 text-white text-sm px-4 py-2 rounded font-semibold transition transform hover:scale-105"
                                 >
                                     Read More
                                 </Link>

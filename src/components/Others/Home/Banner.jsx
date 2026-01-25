@@ -1,5 +1,6 @@
 import React from "react";
 import heroImage from "/images/hero.png";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
     return (
@@ -19,12 +20,16 @@ export default function Hero() {
                     Discover stunning destinations, plan trips, and travel smarter
                 </p>
                 <div className="mt-8 flex justify-center gap-4">
-                    <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300">
-                        Discover Destinations
-                    </button>
-                    <button className="bg-transparent border border-white hover:bg-white hover:text-black text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300">
-                        Plan Your Trip
-                    </button>
+                    <Link to={'/destinations'}>
+                        <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300">
+                            Discover Destinations
+                        </button>
+                    </Link>
+                    <Link to={'/planner'}>
+                        <button className="bg-transparent border border-white hover:bg-white hover:text-black text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300">
+                            Plan Your Trip
+                        </button>
+                    </Link>
                 </div>
             </div>
         </section>

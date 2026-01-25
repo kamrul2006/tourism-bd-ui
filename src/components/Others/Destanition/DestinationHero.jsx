@@ -12,7 +12,7 @@ export default function DestinationHero() {
             }}
         >
             {/* Overlay */}
-            <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/40 to-black/70"></div>
+            <div className="absolute inset-0 bg-linear-to-b from-black via-black/40 to-black"></div>
 
             {/* Content */}
             <div className="relative z-10 text-center max-w-4xl px-6">
