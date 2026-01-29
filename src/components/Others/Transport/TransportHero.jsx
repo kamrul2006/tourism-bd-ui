@@ -9,16 +9,15 @@ export default function TransportHero() {
             style={{ backgroundImage: `url(${heroImage})` }}
         >
             {/* Dark Gradient Overlay */}
-            <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/80"></div>
+            <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/70 to-black/90"></div>
 
             {/* Content */}
             <div className="relative z-10 text-center text-white px-6 max-w-3xl">
                 <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg chicleRegular">
                     Travel Across Bangladesh with Ease
                 </h1>
-                <p className="text-lg md:text-xl text-gray-200 mb-8">
-                    From air to rail, river to road – discover every mode of transport and
-                    plan your journey smarter, safer, and faster.
+                <p className="text-lg md:text-xl text-gray-50 font-semibold mb-8">
+                    From air to rail, river to road – plan your journey smarter, safer, and faster.
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-4">
@@ -28,9 +27,10 @@ export default function TransportHero() {
                     >
                         Explore More
                     </Link>
+
                     <Link
                         to="/budget"
-                        className="bg-white/20 hover:bg-white/30 border border-white/40 text-white px-8 py-3 rounded font-semibold shadow-lg transition transform hover:scale-105"
+                        className="bg-transparent border border-white hover:bg-white hover:text-black text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300"
                     >
                         Budget Planner
                     </Link>
