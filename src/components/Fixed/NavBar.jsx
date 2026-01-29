@@ -17,10 +17,9 @@ export default function Navbar() {
     }, []);
 
     // Smooth background transition
-    const isHome = location.pathname === "/";
     const navbarBg =
-        isHome && !scrolled
-            ? "bg-transparent"
+        !scrolled
+            ? "bg-transparent "
             : "bg-emerald-900/90 backdrop-blur-xl shadow-xl";
 
     const linkStyle =
