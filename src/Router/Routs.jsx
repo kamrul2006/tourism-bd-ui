@@ -4,6 +4,7 @@ import HomePageLayOut from "../Layouts/HomePageLayOut";
 import Error404 from "../components/Fixed/Error404";
 import TipsPageLayOuts from "../Layouts/TipsPageLayOuts";
 import DestinationsPageLAyOut from "../Layouts/DestinationsPageLAyOut ";
+import TransportPageLAyOut from "../Layouts/TransportPageLAyOut";
 
 
 export const router = createBrowserRouter([
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
             {
                 path: '/destinations',
                 element: <DestinationsPageLAyOut />
+            },
+            {
+                path: '/transport',
+                element: <TransportPageLAyOut />
             },
         ]
     },
