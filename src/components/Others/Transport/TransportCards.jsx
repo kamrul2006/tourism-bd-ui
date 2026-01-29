@@ -7,42 +7,42 @@ const transportData = [
         title: "Air Transport",
         desc: "Fast and comfortable flights between major cities of Bangladesh.",
         icon: <FaPlane />,
-        color: "from-sky-500 to-blue-700",
+        bg: "/images/Transport/t1.png",
     },
     {
         id: 2,
         title: "Railway",
         desc: "Scenic, affordable and reliable train journeys across the country.",
         icon: <FaTrain />,
-        color: "from-emerald-500 to-green-700",
+        bg: "/images/Transport/t2.png",
     },
     {
         id: 3,
         title: "Bus Services",
         desc: "The most popular and flexible way to travel between cities.",
         icon: <FaBus />,
-        color: "from-orange-500 to-red-600",
+        bg: "/images/Transport/t3.png",
     },
     {
         id: 4,
         title: "River Transport",
         desc: "Explore Bangladesh’s rivers by ferry, launch and speed boats.",
         icon: <FaShip />,
-        color: "from-cyan-500 to-blue-600",
+        bg: "/images/Transport/t4.png",
     },
     {
         id: 5,
         title: "Car & Ride Sharing",
         desc: "Private cars and ride-sharing for comfort and flexibility.",
         icon: <FaCar />,
-        color: "from-violet-500 to-purple-700",
+        bg: "/images/Transport/t5.png",
     },
     {
         id: 6,
         title: "Local Transport",
         desc: "Rickshaws, CNGs and bikes for short-distance adventures.",
         icon: <FaMotorcycle />,
-        color: "from-pink-500 to-rose-600",
+        bg: "/images/Transport/t6.png",
     },
 ];
 
@@ -57,8 +57,8 @@ export default function TransportCards() {
                         Transport Options in Bangladesh
                     </h2>
                     <p className="text-gray-600 max-w-2xl mx-auto">
-                        Choose the best way to travel based on your budget, comfort, and
-                        destination. Every journey starts here.
+                        Choose the best way to travel based on your budget, comfort, and destination.
+                        Every journey starts here.
                     </p>
                 </div>
 
@@ -67,15 +67,16 @@ export default function TransportCards() {
                     {transportData.map((item) => (
                         <div
                             key={item.id}
-                            className="group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition"
+                            className="group relative h-[380px] rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition"
                         >
-                            {/* Gradient Background */}
+                            {/* Background Image */}
                             <div
-                                className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-90`}
+                                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                style={{ backgroundImage: `url(${item.bg})` }}
                             ></div>
 
-                            {/* Overlay */}
-                            <div className="absolute inset-0 bg-black/30"></div>
+                            {/* Dark Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
 
                             {/* Content */}
                             <div className="relative z-10 p-8 text-white h-full flex flex-col justify-between">
@@ -92,13 +93,13 @@ export default function TransportCards() {
                                 {/* Button */}
                                 <Link
                                     to={`/transport/${item.title.toLowerCase().replace(/\s/g, "-")}`}
-                                    className="mt-6 inline-block w-fit bg-white/20 hover:bg-white/30 border border-white/40 text-white px-5 py-2 rounded-full text-sm font-semibold transition transform hover:scale-105"
+                                    className="inline-block w-fit bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full text-sm font-semibold transition transform hover:scale-105"
                                 >
                                     View Details →
                                 </Link>
                             </div>
 
-                            {/* Hover Glow */}
+                            {/* Glow on Hover */}
                             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-white/10"></div>
                         </div>
                     ))}
