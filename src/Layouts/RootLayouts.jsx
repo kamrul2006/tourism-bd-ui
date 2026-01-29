@@ -12,6 +12,7 @@ const RootLayouts = () => {
 
             <Footer />
 
+            <BackToTop />
         </div>
     )
 }
