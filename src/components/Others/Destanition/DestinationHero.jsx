@@ -35,12 +35,6 @@ export default function DestinationHero() {
                 </div>
             </div>
 
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce">
-                <div className="w-8 h-14 border-2 border-white rounded-full flex items-start justify-center p-1">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-            </div>
         </section>
     );
 }

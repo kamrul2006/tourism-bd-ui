@@ -5,6 +5,7 @@ import Error404 from "../components/Fixed/Error404";
 import TipsPageLayOuts from "../Layouts/TipsPageLayOuts";
 import DestinationsPageLAyOut from "../Layouts/DestinationsPageLAyOut ";
 import TransportPageLAyOut from "../Layouts/TransportPageLAyOut";
+import BudgetPageLayout from "../Layouts/BudgetPageLayout";
 
 
 export const router = createBrowserRouter([
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
             {
                 path: '/transport',
                 element: <TransportPageLAyOut />
+            },
+            {
+                path: '/budget',
+                element: <BudgetPageLayout />
             },
         ]
     },
