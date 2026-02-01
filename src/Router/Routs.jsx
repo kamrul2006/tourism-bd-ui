@@ -7,6 +7,7 @@ import DestinationsPageLAyOut from "../Layouts/DestinationsPageLAyOut ";
 import TransportPageLAyOut from "../Layouts/TransportPageLAyOut";
 import BudgetPageLayout from "../Layouts/BudgetPageLayout";
 import Login from "../Auth/Login";
+import LoginPage from "../Auth/Users/Loginpage";
 
 
 export const router = createBrowserRouter([
@@ -40,7 +41,7 @@ export const router = createBrowserRouter([
     // ---------------------authentication--------------
     {
         path: "/login",
-        element: <Login />
+        element: <LoginPage />
     },
     // {
     //     path: "/register",

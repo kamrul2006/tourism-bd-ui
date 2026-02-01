@@ -3,6 +3,8 @@ import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged,
 import { auth } from "../FireBase/firebase.init";
 
 
+
+
 //----------------the context here------------------
 export const AuthContext = createContext()
 const provider = new GoogleAuthProvider()
@@ -76,5 +78,7 @@ const AuthProvider = ({ children }) => {
         </AuthContext.Provider>
     );
 };
+
+
 
 export default AuthProvider;
