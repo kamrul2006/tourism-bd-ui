@@ -33,13 +33,25 @@ const budgetData = [
 
 export default function SampleBudgetBreakdown() {
     return (
-        <section className="py-20 bg-[#f7f4ef]">
+        <section className="py-10 bg-[#f7f4ef]">
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Section Title */}
                 <h2 className="text-3xl md:text-4xl font-bold text-center text-emerald-900 mb-12">
-                    Sample Budget Breakdown
+
                 </h2>
+
+
+                {/* Title in middle with gray line */}
+                <div className="flex items-center justify-center mb-12">
+                    <div className="h-1 w-80 rounded-full bg-linear-to-l from-gray-400 to-[#f7f4ef]"></div>
+                    <h2 className="mx-4 chicleRegular text-3xl md:text-5xl  text-emerald-900">
+                        Sample Budget Breakdown
+                    </h2>
+                    <div className="h-1 w-80 rounded-full bg-linear-to-r from-gray-400 to-[#f7f4ef]"></div>
+                </div>
+
+
 
                 {/* Background Container */}
                 <div
@@ -73,12 +85,15 @@ export default function SampleBudgetBreakdown() {
                                     {/* Text */}
                                     <div className="flex-1 p-5">
                                         <div className="flex justify-between items-center mb-1">
-                                            <h3 className="text-xl font-bold text-emerald-900">
+
+                                            <h3 className="text-xl md:text-3xl text-emerald-900 chicleRegular">
                                                 {item.title}
                                             </h3>
-                                            <span className="text-lg font-semibold text-emerald-700">
+
+                                            <span className="text-2xl font-semibold font-mono text-emerald-900">
                                                 {item.price}
                                             </span>
+
                                         </div>
                                         <p className="text-gray-600 text-sm leading-relaxed">
                                             {item.desc}
@@ -96,7 +111,7 @@ export default function SampleBudgetBreakdown() {
                     <div className="relative z-10 text-center pb-10">
                         <Link
                             to="/budget/details"
-                            className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg transition transform hover:scale-105"
+                            className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded font-semibold shadow-lg transition transform hover:scale-105"
                         >
                             View Detailed Guide
                         </Link>
