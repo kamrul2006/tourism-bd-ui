@@ -6,6 +6,7 @@ import TipsPageLayOuts from "../Layouts/TipsPageLayOuts";
 import DestinationsPageLAyOut from "../Layouts/DestinationsPageLAyOut ";
 import TransportPageLAyOut from "../Layouts/TransportPageLAyOut";
 import BudgetPageLayout from "../Layouts/BudgetPageLayout";
+import Login from "../Auth/Login";
 
 
 export const router = createBrowserRouter([
@@ -37,10 +38,10 @@ export const router = createBrowserRouter([
         ]
     },
     // ---------------------authentication--------------
-    // {
-    //     path: "/login",
-    //     element: <LoginPage />
-    // },
+    {
+        path: "/login",
+        element: <Login />
+    },
     // {
     //     path: "/register",
     //     element: <SignupPage />
