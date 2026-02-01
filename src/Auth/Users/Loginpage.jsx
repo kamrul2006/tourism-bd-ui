@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { FaGoogle, FaEyeSlash, FaEye } from "react-icons/fa";
+import { FaGoogle, FaEyeSlash, FaEye, FaHome } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import UseAxiosPublic from "../../Hooks/UseAxiosPublic";
@@ -86,6 +86,14 @@ const LoginPage = () => {
             {/* Dark Overlay */}
             <div className="absolute inset-0 bg-black/60" />
 
+            {/* Back Home */}
+            <Link
+                to="/"
+                className="absolute top-6 left-6 z-20 flex items-center gap-2 text-white bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 transition"
+            >
+                <FaHome /> Home
+            </Link>
+
             {/* Login Card */}
             <div className="relative z-10 w-full max-w-md rounded-2xl bg-white/10 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.5)] px-8 py-8 text-white">
 
@@ -139,7 +147,7 @@ const LoginPage = () => {
                         <button
                             type="button"
                             onClick={() => setShowPassword(!showPassword)}
-                            className="absolute right-4 top-11 text-gray-300 hover:text-white transition"
+                            className="absolute right-4 top-11 text-orange-600 hover:text-emerald-900 transition"
                         >
                             {showPassword ? <FaEyeSlash /> : <FaEye />}
                         </button>
