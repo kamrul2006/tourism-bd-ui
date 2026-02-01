@@ -6,7 +6,6 @@ import TipsPageLayOuts from "../Layouts/TipsPageLayOuts";
 import DestinationsPageLAyOut from "../Layouts/DestinationsPageLAyOut ";
 import TransportPageLAyOut from "../Layouts/TransportPageLAyOut";
 import BudgetPageLayout from "../Layouts/BudgetPageLayout";
-import Login from "../Auth/Login";
 import LoginPage from "../Auth/Users/Loginpage";
 
 
