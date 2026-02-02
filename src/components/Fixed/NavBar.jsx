@@ -52,7 +52,7 @@ export default function Navbar() {
 
                 {/* Logo */}
                 <Link to="/">
-                    <img src={logo} alt="TourismBD" className="w-28 drop-shadow" />
+                    <img src={logo} alt="TourismBD" className="w-28 drop-shadow drop-shadow-amber-50" />
                 </Link>
 
                 {/* Desktop Nav */}

@@ -148,5 +148,155 @@
         "badge": "Eco Travel",
         "shortDesc": "Travel responsibly.",
         "description": "Reduce plastic use and respect nature."
+    },
+    {
+        "id": 16,
+        "title": "Bangladeshi Street Food",
+        "category": "Food",
+        "image": "https://i.pinimg.com/564x/9b/65/b6/9b65b6f4473393641df89633af47a183.jpg",
+        "date": "April 10, 2024",
+        "badge": "Food Guide",
+        "shortDesc": "Taste the local flavors.",
+        "description": "Try popular street foods like Fuchka, Chotpoti, Jhalmuri, Singara, Biriyani, and traditional Pitha. Street food in Bangladesh is flavorful and affordable. Always choose clean and busy stalls to ensure freshness and hygiene."
+    },
+    {
+        "id": 26,
+        "title": "Use Local Transportation",
+        "category": "Transport",
+        "image": "https://ecdn.dhakatribune.net/contents/cache/images/640x359x1/uploads/media/2024/03/08/Bus-1fc8dd1537b8824800fc6a8dea84a621.jpg?jadewits_media_id=16493",
+        "date": "April 12, 2024",
+        "badge": "Travel Tip",
+        "shortDesc": "Travel like a local and save money.",
+        "description": "Buses, trains, and CNG auto-rickshaws are the most affordable ways to travel across Bangladesh. While not luxurious, they offer a real local experience and help you stay within budget."
+    },
+    {
+        "id": 36,
+        "title": "Stay at Budget Hotels",
+        "category": "Accommodation",
+        "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/de/1f/5f/innotel-baton-rouge.jpg?w=900&h=500&s=1",
+        "date": "April 15, 2024",
+        "badge": "Budget Stay",
+        "shortDesc": "Comfortable stays at low cost.",
+        "description": "Guesthouses, hostels, and budget hotels are widely available in tourist areas. Many provide clean rooms, Wi-Fi, and friendly service at very affordable prices."
+    },
+    {
+        "id": 46,
+        "title": "Travel by Train",
+        "category": "Transport",
+        "image": "https://ecdn.dhakatribune.net/contents/cache/images/900x505x1/uploads/media/2025/09/25/Train-754eac58b176fb4d5ae13ef502d5fb4a-ezgif.com-webp-to-jpg-converter-b3067ddf991fb37e49ae357636e37696.jpg?jadewits_media_id=51506",
+        "date": "April 18, 2024",
+        "badge": "Transport Guide",
+        "shortDesc": "Scenic and comfortable travel.",
+        "description": "Bangladesh Railway offers scenic routes across rivers, villages, and countryside. Booking tickets early ensures better seating and comfort."
+    },
+    {
+        "id": 56,
+        "title": "Respect Local Culture",
+        "category": "Culture",
+        "image": "https://ecdn.dhakatribune.net/contents/cache/images/900x505x1/uploads/dten/2023/04/13/dt-165.jpeg",
+        "date": "April 20, 2024",
+        "badge": "Cultural Tip",
+        "shortDesc": "Be respectful and mindful.",
+        "description": "Dress modestly, especially in rural areas and religious places. Always ask permission before taking photos of people and respect local customs."
+    },
+    {
+        "id": 66,
+        "title": "Carry Cash",
+        "category": "Money",
+        "image": "https://i.ebayimg.com/images/g/jwUAAeSwXeVoQhKz/s-l1600.jpg",
+        "date": "April 22, 2024",
+        "badge": "Money Tip",
+        "shortDesc": "Cash is still king.",
+        "description": "Many small shops, markets, and rural areas do not accept cards or mobile payments. Always keep some cash with you for emergencies."
+    },
+    {
+        "id": 7,
+        "title": "Visit Free Attractions",
+        "category": "Activities",
+        "image": "https://i.pinimg.com/564x/66/9a/8f/669a8f3d4b5a50bb4b9e16f0c4ed4e42.jpg",
+        "date": "April 25, 2024",
+        "badge": "Free Travel",
+        "shortDesc": "Enjoy without spending money.",
+        "description": "Beaches, parks, riversides, and local markets are often free to explore and provide amazing experiences."
+    },
+    {
+        "id": 8,
+        "title": "Bargain at Local Markets",
+        "category": "Shopping",
+        "image": "https://i.pinimg.com/564x/28/91/aa/2891aa95b01f4c9f51fa2b3e6c4c76b0.jpg",
+        "date": "April 28, 2024",
+        "badge": "Shopping Tip",
+        "shortDesc": "Negotiate for better prices.",
+        "description": "Bargaining is common in local bazaars. Be polite and friendly while negotiating to get the best deals."
+    },
+    {
+        "id": 9,
+        "title": "Travel During Off-Season",
+        "category": "Planning",
+        "image": "https://i.pinimg.com/564x/0d/32/5b/0d325b4df4c2fbb61c29bb12d3fd56d5.jpg",
+        "date": "May 1, 2024",
+        "badge": "Travel Planning",
+        "shortDesc": "Avoid crowds and save money.",
+        "description": "Off-season travel offers cheaper hotel rates and fewer tourists. Just be cautious about weather conditions."
+    },
+    {
+        "id": 10,
+        "title": "Use Local Guides",
+        "category": "Guide",
+        "image": "https://i.pinimg.com/564x/ab/29/df/ab29df0a25c4bfe67b29cb5f84bba5f1.jpg",
+        "date": "May 4, 2024",
+        "badge": "Guide Tip",
+        "shortDesc": "Learn from locals.",
+        "description": "Local guides are affordable and provide deep insights into culture, history, and hidden spots."
+    },
+    {
+        "id": 11,
+        "title": "Pack Light",
+        "category": "Packing",
+        "image": "https://i.pinimg.com/564x/52/7a/11/527a11a00b20c7ff2f2bb4f91c8d3f68.jpg",
+        "date": "May 6, 2024",
+        "badge": "Packing Tip",
+        "shortDesc": "Travel easier and faster.",
+        "description": "Light packing helps you move easily on public transport and reduces travel stress."
+    },
+    {
+        "id": 12,
+        "title": "Buy Local SIM Card",
+        "category": "Technology",
+        "image": "https://i.pinimg.com/564x/18/67/ef/1867efc94cb9ed2cba7e5c46c8b60a47.jpg",
+        "date": "May 8, 2024",
+        "badge": "Connectivity",
+        "shortDesc": "Stay connected everywhere.",
+        "description": "Local SIM cards with internet packages are cheap and useful for navigation, bookings, and communication."
+    },
+    {
+        "id": 13,
+        "title": "Try River Transport",
+        "category": "Transport",
+        "image": "https://i.pinimg.com/564x/7f/1e/62/7f1e624fe3f2e1a13f5b50a9df0a52b1.jpg",
+        "date": "May 10, 2024",
+        "badge": "River Life",
+        "shortDesc": "Explore Bangladesh by water.",
+        "description": "River ferries and boats are a unique and scenic way to travel across the country."
+    },
+    {
+        "id": 14,
+        "title": "Wake Up Early",
+        "category": "Lifestyle",
+        "image": "https://i.pinimg.com/564x/99/87/5c/99875c0deaa1c21b65b18c5e3cce23d1.jpg",
+        "date": "May 12, 2024",
+        "badge": "Travel Habit",
+        "shortDesc": "Make the most of your day.",
+        "description": "Early mornings are cooler, less crowded, and perfect for sightseeing and photography."
+    },
+    {
+        "id": 15,
+        "title": "Travel Slowly",
+        "category": "Lifestyle",
+        "image": "https://i.pinimg.com/564x/c4/2f/7d/c42f7d4f7c87fcb9c6a71b6cba58c1d2.jpg",
+        "date": "May 15, 2024",
+        "badge": "Travel Mindset",
+        "shortDesc": "Enjoy the journey, not just the destination.",
+        "description": "Slow travel helps reduce costs, stress, and allows you to deeply experience Bangladeshi culture and people."
     }
 ]
