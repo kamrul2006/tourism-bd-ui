@@ -52,14 +52,14 @@ const LoginPage = () => {
             const res = await GoogleLogin();
             setUser(res.user);
 
-            // const userInfo = {
-            //     name: res.user.displayName,
-            //     email: res.user.email,
-            //     role: "user",
-            //     isSubscribed: false,
-            // };
+            const userInfo = {
+                name: res.user.displayName,
+                email: res.user.email,
+                role: "user",
+                isSubscribed: false,
+            };
 
-            // await axiosPublic.post("/users", userInfo);
+            await axiosPublic.post("/users", userInfo);
 
             Swal.fire({
                 icon: "success",
