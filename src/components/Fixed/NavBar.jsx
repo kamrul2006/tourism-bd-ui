@@ -91,7 +91,7 @@ export default function Navbar() {
                     ) : (
                         <div className="relative" ref={dropdownRef}>
                             <img
-                                src={user.photoURL || "/images/user.png"}
+                                src={user.photoURL}
                                 alt="User"
                                 onClick={() => setDropdown(!dropdown)}
                                 className="w-10 h-10 rounded-full border-2 border-orange-400 cursor-pointer object-cover"
@@ -100,7 +100,7 @@ export default function Navbar() {
                             {dropdown && (
                                 <div className="absolute right-0 mt-3 w-48 bg-white rounded-xl shadow-xl overflow-hidden">
                                     <div className="px-4 py-3 text-sm text-gray-700 font-semibold">
-                                        {user.displayName || "User"}
+                                        {user.displayName || "User Name"}
                                     </div>
                                     <button
                                         onClick={UserSignOut}

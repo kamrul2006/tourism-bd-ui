@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import RootLayouts from "../Layouts/RootLayouts";
 import HomePageLayOut from "../Layouts/HomePageLayOut";
-import Error404 from "../components/Fixed/Error404";
+import NotFound from "../components/Fixed/Error404";
 import TipsPageLayOuts from "../Layouts/TipsPageLayOuts";
 import DestinationsPageLAyOut from "../Layouts/DestinationsPageLAyOut ";
 import TransportPageLAyOut from "../Layouts/TransportPageLAyOut";
@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
     {
         path: "/",
         element: <RootLayouts />,
-        errorElement: <Error404 />,
+        errorElement: <NotFound />,
         children: [
             {
                 path: '/',
