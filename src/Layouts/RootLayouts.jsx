@@ -5,7 +5,7 @@ import BackToTop from '../components/Fixed/BackToTop'
 
 const RootLayouts = () => {
     return (
-        <div className=''>
+        <div className="bg-[#f7f4ef]">
             <Navbar />
 
             <Outlet />

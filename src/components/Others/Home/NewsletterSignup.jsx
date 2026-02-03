@@ -2,9 +2,9 @@ import newsletterBg from "/images/NewsletterSignup.png";
 
 export default function NewsletterSignup() {
     return (
-        <div className="bg-[#f7f4ef] pb-10">
+        <div className="bg-[#f7f4ef] py-10">
             <section
-                className="relative py-24 bg-cover bg-center  rounded-bl-[80px] rounded-tr-[80px] mx-4"
+                className="relative py-24 bg-cover bg-center  rounded-bl-[80px] rounded-tr-[80px] mx-4 "
                 style={{ backgroundImage: `url(${newsletterBg})` }}
             >
                 {/* Gradient Overlay */}

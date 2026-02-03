@@ -3,6 +3,7 @@ import { AuthContext } from "../../../Auth/Providers/AuthProvider";
 import { FaStar, FaQuoteLeft, FaUserCircle } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import Marquee from "react-fast-marquee";
 
 const ReviewSection = () => {
     const { user } = useContext(AuthContext);
@@ -14,7 +15,7 @@ const ReviewSection = () => {
     const [message, setMessage] = useState("");
     const [loading, setLoading] = useState(true);
 
-    // Fetch reviews
+    //------------------ Fetch reviews----------------
     useEffect(() => {
         fetch("http://localhost:5000/reviews")
             .then(res => res.json())
@@ -40,7 +41,7 @@ const ReviewSection = () => {
         fetchReviews();
     }, []);
 
-    // Submit review
+    // ----------------Submit review---------------
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -83,7 +84,7 @@ const ReviewSection = () => {
             body: JSON.stringify(newReview),
         });
 
-        fetchReviews(); // ✅ REAL DATA ONLY
+        fetchReviews();
         setRating(0);
         setMessage("");
 
@@ -98,70 +99,79 @@ const ReviewSection = () => {
 
     return (
         <section
-            className="relative py-20 bg-cover bg-center"
+            className="relative py-10 bg-cover bg-center"
             style={{
                 backgroundImage:
                     "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee')",
             }}
         >
-            {/* Overlay */}
+            {/*---------- Overlay----------- */}
             <div className="absolute inset-0 bg-black/60"></div>
 
             <div className="relative max-w-7xl mx-auto px-4 text-white">
-                {/* Header */}
+                {/*--------- Header-------- */}
                 <div className="text-center mb-14">
-                    <h2 className="text-4xl font-bold mb-3">What Travelers Say</h2>
+                    <h2 className="text-4xl md:text-6xl mb-3 chicleRegular">What Travelers Say</h2>
+
                     <p className="text-gray-200 max-w-2xl mx-auto">
                         Real stories from travelers who explored Bangladesh with us
                     </p>
                 </div>
 
-                {/* Reviews */}
+                {/*----------Reviews ----------*/}
                 {loading ? (
                     <p className="text-center">Loading reviews...</p>
                 ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-                        {reviews.map((review, index) => (
-                            <div
-                                key={index}
-                                className="bg-white/90 text-gray-800 backdrop-blur-lg rounded-2xl p-6 shadow-xl"
-                            >
-                                <FaQuoteLeft className="text-green-700 text-2xl mb-3" />
 
-                                <p className="mb-4 italic">“{review.message}”</p>
+                    <Marquee
+                        speed={100}
+                        gradient={false}
+                        pauseOnHover={true}
+                        className="py-1"
+                    >
+                        <div className="flex items-center justify-center gap-4 mb-8 mx-2">
+                            {reviews.map((review, index) => (
+                                <div
+                                    key={index}
+                                    className="bg-white/90 text-gray-800 backdrop-blur-lg rounded-2xl p-6 shadow-xl"
+                                >
+                                    <FaQuoteLeft className="text-green-700 text-2xl mb-3" />
 
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-2">
-                                        {review.photoURL ? (
-                                            <img
-                                                src={review.photoURL}
-                                                alt=""
-                                                className="w-10 h-10 rounded-full object-cover"
-                                            />
-                                        ) : (
-                                            <FaUserCircle className="text-3xl text-green-700" />
-                                        )}
-                                        <span className="font-semibold">{review.name}</span>
-                                    </div>
+                                    <p className="mb-4 italic">“{review.message}”</p>
 
-                                    <div className="flex text-yellow-400">
-                                        {[...Array(review.rating)].map((_, i) => (
-                                            <FaStar key={i} />
-                                        ))}
+                                    <div className="flex items-center justify-between">
+                                        <div className="flex items-center gap-2">
+                                            {review.photoURL ? (
+                                                <img
+                                                    src={review.photoURL}
+                                                    alt=""
+                                                    className="w-10 h-10 rounded-full object-cover"
+                                                />
+                                            ) : (
+                                                <FaUserCircle className="text-3xl text-green-700" />
+                                            )}
+                                            <span className="font-semibold">{review.name}</span>
+                                        </div>
+
+                                        <div className="flex text-yellow-400">
+                                            {[...Array(review.rating)].map((_, i) => (
+                                                <FaStar key={i} />
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
+                            ))}
+                        </div>
+                    </Marquee>
                 )}
 
-                {/* Submit Review */}
+                {/* --------------Submit Review------------ */}
                 <div className="max-w-3xl mx-auto bg-white/90 backdrop-blur-xl rounded-3xl p-8 shadow-2xl text-gray-800">
-                    <h3 className="text-2xl font-bold text-center text-green-800 mb-6">
+                    <h3 className="text-3xl chicleRegular text-center text-green-800 mb-6">
                         Share Your Experience
                     </h3>
 
-                    {/* Star Rating */}
+                    {/*--------- Star Rating-------------- */}
                     <div className="flex justify-center mb-5">
                         {[1, 2, 3, 4, 5].map((star) => (
                             <FaStar
