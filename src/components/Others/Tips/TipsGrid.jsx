@@ -5,6 +5,8 @@ export default function TipsGrid() {
     const [tips, setTips] = useState([]);
     const [activeCategory, setActiveCategory] = useState("All");
     const [currentPage, setCurrentPage] = useState(1);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     const tipsPerPage = 12;
 
@@ -18,19 +20,30 @@ export default function TipsGrid() {
         "Food",
     ];
 
+    // ----------- Fetch from server + sort by newest date--------------
     useEffect(() => {
-        fetch("/data/tips.json")
-            .then((res) => res.json())
-            .then((data) => setTips(data));
+        const fetchBlogs = async () => {
+            try {
+                const res = await fetch("http://localhost:5000/blogs");
+                const data = await res.json();
+                setTips([...data].reverse());
+            } catch (err) {
+                setError(err.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchBlogs();
     }, []);
 
-    // Filter by category
+    // ------------------- Filter by category------------
     const filteredTips =
         activeCategory === "All"
             ? tips
             : tips.filter((tip) => tip.category === activeCategory);
 
-    // Pagination Logic
+    // -------------- Pagination--------------
     const totalPages = Math.ceil(filteredTips.length / tipsPerPage);
     const startIndex = (currentPage - 1) * tipsPerPage;
     const currentTips = filteredTips.slice(
@@ -38,12 +51,26 @@ export default function TipsGrid() {
         startIndex + tipsPerPage
     );
 
-    return (
-        <section className="py-20 bg-[#f7f4ef]">
-            <div className="max-w-7xl mx-auto px-6">
+    if (loading)
+        return (
+            <div className="py-20 text-center text-lg font-semibold">
+                Loading Tips...
+            </div>
+        );
 
-                {/* Categories */}
-                <div className="flex flex-wrap justify-center gap-3 mb-12">
+    if (error)
+        return (
+            <div className="py-20 text-center text-red-500 font-semibold">
+                {error}
+            </div>
+        );
+
+    return (
+        <section className="py-16 md:py-20 bg-[#f7f4ef]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+
+                {/* ✅ Categories */}
+                <div className="flex flex-wrap justify-center gap-3 mb-10 md:mb-12">
                     {categories.map((cat) => (
                         <button
                             key={cat}
@@ -51,8 +78,8 @@ export default function TipsGrid() {
                                 setActiveCategory(cat);
                                 setCurrentPage(1);
                             }}
-                            className={`px-6 py-2 rounded-full font-semibold transition-all
-                ${activeCategory === cat
+                            className={`px-5 py-2 text-sm md:text-base rounded-full font-semibold transition-all
+                            ${activeCategory === cat
                                     ? "bg-emerald-700 text-white shadow-md scale-105"
                                     : "bg-white text-gray-700 hover:bg-emerald-100"
                                 }`}
@@ -62,13 +89,13 @@ export default function TipsGrid() {
                     ))}
                 </div>
 
-                {/* Cards Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {/* ------------------- Cards Grid----------------- */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
 
                     {currentTips.map((tip) => (
                         <div
-                            key={tip.id}
-                            className="group relative rounded-2xl overflow-hidden shadow-xl cursor-pointer h-107.5"
+                            key={tip._id}
+                            className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 cursor-pointer h-105"
                         >
                             {/* Image */}
                             <img
@@ -78,7 +105,7 @@ export default function TipsGrid() {
                             />
 
                             {/* Overlay */}
-                            <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent"></div>
+                            <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent" />
 
                             {/* Badge */}
                             <span className="absolute top-4 left-4 bg-emerald-600 text-white text-xs px-3 py-1 rounded-full z-10 shadow">
@@ -86,21 +113,21 @@ export default function TipsGrid() {
                             </span>
 
                             {/* Content */}
-                            <div className="absolute bottom-0 left-0 right-0 p-5 z-10 transition-all duration-300 group-hover:-translate-y-2">
-                                <h3 className="text-white text-xl font-bold mb-1 leading-snug border-b-2 border-amber-600 w-fit pb-2 pr-2">
+                            <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5 z-10 transition-all duration-300 group-hover:-translate-y-2">
+                                <h3 className="text-white text-lg md:text-xl font-bold mb-1 leading-snug border-b-2 border-amber-500 w-fit pb-2 pr-2">
                                     {tip.title}
                                 </h3>
 
-                                <p className="text-gray-200 text-sm mb-1">
+                                <p className="text-gray-200 text-sm mb-1 line-clamp-2">
                                     {tip.shortDesc}
                                 </p>
 
-                                <p className="text-gray-400 text-xs mb-4">
+                                <p className="text-gray-400 text-xs mb-3">
                                     {tip.date}
                                 </p>
 
                                 <Link
-                                    to={`/tips/${tip.id}`}
+                                    to={`/tips/${tip._id}`}
                                     className="inline-block bg-orange-500 hover:bg-orange-600 text-white text-sm px-4 py-2 rounded font-semibold transition transform hover:scale-105"
                                 >
                                     Read More
@@ -108,42 +135,42 @@ export default function TipsGrid() {
                             </div>
                         </div>
                     ))}
-
                 </div>
 
-                {/* Pagination */}
-                <div className="flex justify-center items-center mt-12 gap-3">
-                    <button
-                        disabled={currentPage === 1}
-                        onClick={() => setCurrentPage((p) => p - 1)}
-                        className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-40"
-                    >
-                        Prev
-                    </button>
-
-                    {[...Array(totalPages)].map((_, index) => (
+                {/* -------------------------------- Pagination -------------------------*/}
+                {totalPages > 1 && (
+                    <div className="flex flex-wrap justify-center items-center mt-12 gap-2 md:gap-3">
                         <button
-                            key={index}
-                            onClick={() => setCurrentPage(index + 1)}
-                            className={`px-4 py-2 rounded font-semibold transition
-                ${currentPage === index + 1
-                                    ? "bg-emerald-700 text-white"
-                                    : "bg-white text-gray-700 hover:bg-emerald-100"
-                                }`}
+                            disabled={currentPage === 1}
+                            onClick={() => setCurrentPage((p) => p - 1)}
+                            className="px-3 md:px-4 py-2 text-sm rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-40"
                         >
-                            {index + 1}
+                            Prev
                         </button>
-                    ))}
 
-                    <button
-                        disabled={currentPage === totalPages}
-                        onClick={() => setCurrentPage((p) => p + 1)}
-                        className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-40"
-                    >
-                        Next
-                    </button>
-                </div>
+                        {[...Array(totalPages)].map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => setCurrentPage(index + 1)}
+                                className={`px-3 md:px-4 py-2 text-sm rounded font-semibold transition
+                                ${currentPage === index + 1
+                                        ? "bg-emerald-700 text-white"
+                                        : "bg-white text-gray-700 hover:bg-emerald-100"
+                                    }`}
+                            >
+                                {index + 1}
+                            </button>
+                        ))}
 
+                        <button
+                            disabled={currentPage === totalPages}
+                            onClick={() => setCurrentPage((p) => p + 1)}
+                            className="px-3 md:px-4 py-2 text-sm rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-40"
+                        >
+                            Next
+                        </button>
+                    </div>
+                )}
             </div>
         </section>
     );
