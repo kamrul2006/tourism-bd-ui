@@ -9,6 +9,7 @@ import AchievementsStats from '../components/Others/Home/AchievementsStats'
 import NewsletterSignup from '../components/Others/Home/NewsletterSignup'
 import FoodOfBangladesh from '../components/Others/Home/FoodOfBangladesh'
 import Partners from '../components/Others/Home/Partners'
+import ReviewSection from '../components/Others/Home/ReviewSection'
 
 const HomePageLayOut = () => {
     return (
@@ -33,6 +34,8 @@ const HomePageLayOut = () => {
             <AchievementsStats />
 
             <FoodOfBangladesh />
+
+            <ReviewSection />
 
             <NewsletterSignup />
 
