@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Fade, Slide, Zoom } from "react-awesome-reveal";
 
 const foods = [
     {
@@ -29,62 +30,70 @@ export default function FoodOfBangladesh() {
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Title with line */}
-                <div className="flex items-center justify-center mb-5">
+                <Fade direction="up"  >
 
-                    <div className="h-1 rounded-full w-80 bg-linear-to-l from-gray-400 to-[#f7f4ef]"></div>
-                    <h2 className="mx-4 text-3xl md:text-5xl chicleRegular text-emerald-900">
-                        Food of Bangladesh
-                    </h2>
-                    <div className="h-1 w-80 rounded-full bg-linear-to-r from-gray-400 to-[#f7f4ef]"></div>
+                    <div className="flex flex-col md:flex-row items-center justify-center mb-5">
 
-                </div>
+                        <Slide>
+                            <div className=" md:block h-1 w-24 md:w-48 lg:w-80 rounded-full bg-linear-to-l from-gray-400 to-[#f7f4ef]" />
+                        </Slide>
+                        <h2 className="mx-2 text-3xl md:text-5xl chicleRegular text-emerald-900 text-center my-3 md:my-0">
+                            Food of Bangladesh
+                        </h2>
+                        <Slide direction="right">
+                            <div className=" md:block h-1 w-24 md:w-48 lg:w-80 rounded-full bg-linear-to-r from-gray-400 to-[#f7f4ef]" />
+                        </Slide>
+                    </div>
+                </Fade>
 
                 {/* Subtitle */}
-                <p className="text-center text-emerald-900 mb-8 font-bold italic font-serif">
-                    Travel + Food = A Powerful Experience. Taste the soul of Bangladesh.
-                </p>
+                <Fade direction="up" delay={100}  >
+                    <p className="text-center text-emerald-900 mb-12 font-bold italic font-serif text-sm sm:text-base">
+                        Travel + Food = A Powerful Experience. Taste the soul of Bangladesh.
+                    </p>
+                </Fade>
 
                 {/* Food Cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {foods.map((food) => (
-                        <div
-                            key={food.id}
-                            className="group relative rounded-xl overflow-hidden shadow-lg cursor-pointer"
-                        >
-                            {/* Image */}
-                            <img
-                                src={food.img}
-                                alt={food.name}
-                                className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
-                            />
+                <Zoom cascade damping={0.2}  >
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {foods.map((food, index) => (
+                            <Zoom key={food.id} delay={index * 100}>
+                                <div className="group relative rounded-xl overflow-hidden shadow-lg cursor-pointer transition-transform duration-300 hover:scale-105">
+                                    {/* Image */}
+                                    <img
+                                        src={food.img}
+                                        alt={food.name}
+                                        className="w-full h-60 object-cover transition-transform duration-500 group-hover:scale-110"
+                                    />
 
-                            {/* Gradient Overlay */}
-                            <div className="absolute inset-0 bg-linear-to-t from-black/90 to-black/10"></div>
+                                    {/* Gradient Overlay */}
+                                    <div className="absolute inset-0 bg-linear-to-t from-black/90 to-black/10"></div>
 
-                            {/* Food Name */}
-                            <div className="absolute inset-0 flex flex-col items-center justify-end mb-6 text-center z-10 transition-all duration-300 group-hover:-translate-y-6">
-                                <h3 className="text-white text-2xl font-semibold drop-shadow">
-                                    {food.name}
-                                </h3>
-                                <div className="w-12 h-0.5 bg-orange-400 my-2 group-hover:mb-6"></div>
-                                <p className="text-gray-200 text-sm tracking-wide group-hover:hidden">
-                                    Taste the Tradition
-                                </p>
-                            </div>
+                                    {/* Food Name */}
+                                    <div className="absolute inset-0 flex flex-col items-center justify-end mb-6 text-center z-10 transition-all duration-300 group-hover:-translate-y-6">
+                                        <h3 className="text-white text-2xl font-semibold drop-shadow">
+                                            {food.name}
+                                        </h3>
+                                        <div className="w-12 h-0.5 bg-orange-400 my-2 group-hover:mb-6"></div>
+                                        <p className="text-gray-200 text-sm tracking-wide group-hover:hidden">
+                                            Taste the Tradition
+                                        </p>
+                                    </div>
 
-                            {/* Hover Button */}
-                            <div className="absolute inset-0 flex items-end justify-center pb-6 opacity-0 group-hover:opacity-100 transition duration-300 z-10">
-                                <Link
-                                    to="/food"
-                                    className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded font-semibold shadow-md transition transform hover:scale-105"
-                                >
-                                    Explore Food
-                                </Link>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
+                                    {/* Hover Button */}
+                                    <div className="absolute inset-0 flex items-end justify-center pb-6 opacity-0 group-hover:opacity-100 transition duration-300 z-10">
+                                        <Link
+                                            to="/tips"
+                                            className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded font-semibold shadow-md transition transform hover:scale-105"
+                                        >
+                                            Explore Food
+                                        </Link>
+                                    </div>
+                                </div>
+                            </Zoom>
+                        ))}
+                    </div>
+                </Zoom>
             </div>
         </section>
     );
