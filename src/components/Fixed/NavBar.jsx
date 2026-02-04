@@ -1,8 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import { useContext, useEffect, useRef, useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes, FaUserCircle, FaHome, FaMapMarkedAlt, FaWallet, FaBus, FaLightbulb, FaRegEdit } from "react-icons/fa";
+import { MdTipsAndUpdates } from "react-icons/md";
+import { Fade, Slide } from "react-awesome-reveal";
 import logo from "/Logo/logo.png";
 import { AuthContext } from "../../Auth/Providers/AuthProvider";
+import { FaDoorOpen } from "react-icons/fa6";
+import { IoLogIn } from "react-icons/io5";
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -34,16 +38,16 @@ export default function Navbar() {
         : "bg-emerald-900/90 backdrop-blur-xl shadow-xl";
 
     const linkStyle =
-        "text-white/90 hover:text-orange-400 transition font-medium relative after:absolute after:w-0 after:h-[2px] after:bg-orange-400 after:left-0 after:-bottom-1 after:transition-all hover:after:w-full";
+        "flex items-center gap-2 text-white/90 hover:text-orange-400 transition font-medium relative after:absolute after:w-0 after:h-[2px] after:bg-orange-400 after:left-0 after:-bottom-1 after:transition-all hover:after:w-full";
 
     const activeStyle = "text-orange-400 after:w-full";
 
     const navItems = [
-        { name: "Home", path: "/" },
-        { name: "Destinations", path: "/destinations" },
-        { name: "Budget", path: "/budget" },
-        { name: "Transport", path: "/transport" },
-        { name: "Tips", path: "/tips" },
+        { name: "Home", path: "/", icon: <FaHome /> },
+        { name: "Destinations", path: "/destinations", icon: <FaMapMarkedAlt /> },
+        { name: "Budget", path: "/budget", icon: <FaWallet /> },
+        { name: "Transport", path: "/transport", icon: <FaBus /> },
+        { name: "Tips", path: "/tips", icon: <MdTipsAndUpdates /> },
     ];
 
     return (
@@ -52,22 +56,22 @@ export default function Navbar() {
 
                 {/* Logo */}
                 <Link to="/">
-                    <img src={logo} alt="TourismBD" className="w-28 drop-shadow drop-shadow-amber-50" />
+                    <img src={logo} alt="TourismBD" className="w-28 h-7 drop-shadow drop-shadow-amber-50" />
                 </Link>
 
-                {/* Desktop Nav */}
+                {/* Desktop Menu */}
                 <ul className="hidden md:flex gap-10 absolute left-1/2 -translate-x-1/2">
                     {navItems.map((item) => (
-                        <li key={item.path}>
-                            <NavLink
-                                to={item.path}
-                                className={({ isActive }) =>
-                                    `${linkStyle} ${isActive ? activeStyle : ""}`
-                                }
-                            >
-                                {item.name}
-                            </NavLink>
-                        </li>
+                        <Slide key={item.path} direction="down" triggerOnce>
+                            <li>
+                                <NavLink
+                                    to={item.path}
+                                    className={({ isActive }) => `${linkStyle} ${isActive ? activeStyle : ""}`}
+                                >
+                                    {item.icon} {item.name}
+                                </NavLink>
+                            </li>
+                        </Slide>
                     ))}
                 </ul>
 
@@ -77,15 +81,15 @@ export default function Navbar() {
                         <>
                             <Link
                                 to="/login"
-                                className="text-white border border-white/40 px-4 py-1.5 rounded hover:bg-white hover:text-emerald-900 transition"
+                                className="text-white  px-4 py-1.5 rounded hover:bg-white hover:text-emerald-900 transition flex items-center gap-2"
                             >
-                                Login
+                                <IoLogIn /> Login
                             </Link>
                             <Link
                                 to="/signup"
-                                className="bg-orange-500 text-white px-4 py-1.5 rounded hover:bg-orange-600 shadow-lg transition"
+                                className="bg-orange-500 text-white px-4 py-1.5 rounded hover:bg-orange-600 shadow-lg transition flex items-center gap-2"
                             >
-                                Sign Up
+                                <FaRegEdit /> Sign Up
                             </Link>
                         </>
                     ) : (
@@ -96,19 +100,20 @@ export default function Navbar() {
                                 onClick={() => setDropdown(!dropdown)}
                                 className="w-10 h-10 rounded-full border-2 border-orange-400 cursor-pointer object-cover"
                             />
-
                             {dropdown && (
-                                <div className="absolute right-0 mt-3 w-48 bg-white rounded-xl shadow-xl overflow-hidden">
-                                    <div className="px-4 py-3 text-sm text-gray-700 font-semibold">
-                                        {user.displayName || "User Name"}
+                                <Fade direction="down" triggerOnce>
+                                    <div className="absolute right-0 mt-3 w-48 bg-white rounded-xl shadow-xl overflow-hidden">
+                                        <div className="px-4 py-3 text-sm text-gray-700 font-semibold">
+                                            {user.displayName || "User Name"}
+                                        </div>
+                                        <button
+                                            onClick={UserSignOut}
+                                            className="w-full text-left px-4 py-2 text-red-500 hover:bg-gray-100 transition flex items-center gap-2"
+                                        >
+                                            <FaTimes /> Logout
+                                        </button>
                                     </div>
-                                    <button
-                                        onClick={UserSignOut}
-                                        className="w-full text-left px-4 py-2 text-red-500 hover:bg-gray-100 transition"
-                                    >
-                                        Logout
-                                    </button>
-                                </div>
+                                </Fade>
                             )}
                         </div>
                     )}
@@ -116,7 +121,7 @@ export default function Navbar() {
 
                 {/* Mobile Menu Icon */}
                 <div
-                    className="md:hidden text-white text-xl cursor-pointer"
+                    className="md:hidden text-white text-2xl cursor-pointer"
                     onClick={() => setOpen(!open)}
                 >
                     {open ? <FaTimes /> : <FaBars />}
@@ -125,28 +130,28 @@ export default function Navbar() {
 
             {/* Mobile Menu */}
             <div
-                className={`md:hidden overflow-hidden transition-all duration-700 ${open ? "max-h-125" : "max-h-0"
-                    } bg-emerald-900/95 backdrop-blur-lg`}
+                className={`md:hidden overflow-hidden transition-all duration-700 ${open ? "max-h-96" : "max-h-0"} bg-emerald-900/95 backdrop-blur-lg`}
             >
                 <div className="flex flex-col items-center py-6 space-y-4">
                     {navItems.map((item) => (
-                        <NavLink
-                            key={item.path}
-                            to={item.path}
-                            onClick={() => setOpen(false)}
-                            className={linkStyle}
-                        >
-                            {item.name}
-                        </NavLink>
+                        <Fade key={item.path} direction="down" cascade triggerOnce>
+                            <NavLink
+                                to={item.path}
+                                onClick={() => setOpen(false)}
+                                className="flex items-center gap-2 text-white hover:text-orange-400 transition font-semibold text-lg"
+                            >
+                                {item.icon} {item.name}
+                            </NavLink>
+                        </Fade>
                     ))}
 
                     {!user ? (
                         <div className="flex gap-4 pt-4">
-                            <Link to="/login" onClick={() => setOpen(false)} className="border px-4 py-1.5 rounded-full text-white">
-                                Login
+                            <Link to="/login" onClick={() => setOpen(false)} className="border px-4 py-1.5 rounded-full text-white flex items-center gap-2">
+                                <IoLogIn /> Login
                             </Link>
-                            <Link to="/signup" onClick={() => setOpen(false)} className="bg-orange-500 px-4 py-1.5 rounded-full text-white">
-                                Sign Up
+                            <Link to="/signup" onClick={() => setOpen(false)} className="bg-orange-500 px-4 py-1.5 rounded-full text-white flex items-center gap-2">
+                                <FaRegEdit /> Sign Up
                             </Link>
                         </div>
                     ) : (
@@ -158,9 +163,9 @@ export default function Navbar() {
                             <p className="text-white mt-2">{user.displayName}</p>
                             <button
                                 onClick={UserSignOut}
-                                className="mt-3 text-red-400 hover:underline"
+                                className="mt-3 text-red-400 hover:underline flex items-center gap-2"
                             >
-                                Logout
+                                <FaTimes /> Logout
                             </button>
                         </div>
                     )}
