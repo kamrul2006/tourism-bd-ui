@@ -12,7 +12,9 @@ import Partners from '../components/Others/Home/Partners'
 import ReviewSection from '../components/Others/Home/ReviewSection'
 
 const HomePageLayOut = () => {
+
     return (
+
         <div>
 
             <Hero />
@@ -40,7 +42,9 @@ const HomePageLayOut = () => {
             <NewsletterSignup />
 
         </div>
+
     )
 }
+
 
 export default HomePageLayOut
