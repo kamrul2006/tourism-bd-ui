@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Fade, Slide } from "react-awesome-reveal";
 import { MdKeyboardArrowDown, MdSearchOff } from "react-icons/md";
+import Loader from "../../Fixed/Loader";
 
 export default function TipsGrid() {
     const [tips, setTips] = useState([]);
@@ -42,7 +43,9 @@ export default function TipsGrid() {
     const currentTips = filteredTips.slice(startIndex, startIndex + tipsPerPage);
 
     if (loading)
-        return <div className="py-20 text-center text-lg font-semibold">Loading Tips...</div>;
+        return <div >
+            <Loader />
+        </div>;
     if (error)
         return <div className="py-20 text-center text-red-500 font-semibold">{error}</div>;
 

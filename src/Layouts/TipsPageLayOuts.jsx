@@ -1,4 +1,3 @@
-import Loader from '../components/Fixed/Loader'
 import NewsletterSignup from '../components/Others/Home/NewsletterSignup'
 import TipsGrid from '../components/Others/Tips/TipsGrid'
 
@@ -9,8 +8,6 @@ const TipsPageLayOuts = () => {
             <TipsGrid />
 
             <NewsletterSignup />
-
-            <Loader />
 
         </div>
     )
