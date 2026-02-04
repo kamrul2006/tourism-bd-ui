@@ -1,3 +1,4 @@
+import { Fade } from "react-awesome-reveal";
 import Marquee from "react-fast-marquee";
 
 export default function Partners() {
@@ -16,15 +17,17 @@ export default function Partners() {
                 {/* Title */}
                 <div className="text-center mb-3">
 
-                    <div className="flex items-center justify-center gap-5">
-                        <div className="h-1 w-80 rounded-full bg-linear-to-l from-gray-400 to-[#f7f4ef]"></div>
 
-                        <h2 className="text-3xl md:text-5xl chicleRegular  text-emerald-900">
-                            Our Trusted Partners
-                        </h2>
-
-                        <div className="h-1 w-80 rounded-full bg-linear-to-r from-gray-400 to-[#f7f4ef]"></div>
-                    </div>
+                    {/* Title */}
+                    <Fade direction="up" triggerOnce>
+                        <div className="flex items-center justify-center mb-3 md:mb-14 md:gap-3 gap-2">
+                            <div className=" md:block h-1 w-24 md:w-48 lg:w-80 rounded-full bg-linear-to-l from-gray-400 to-[#f7f4ef]" />
+                            <h2 className="chicleRegular text-3xl md:text-5xl text-emerald-900 text-center">
+                                Our Trusted Partners
+                            </h2>
+                            <div className=" md:block h-1 w-24 md:w-48 lg:w-80 rounded-full bg-linear-to-r from-gray-400 to-[#f7f4ef]" />
+                        </div>
+                    </Fade>
 
 
                     <p className="mt-3 text-gray-600">
