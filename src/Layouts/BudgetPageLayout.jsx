@@ -6,11 +6,13 @@ import SampleBudgetBreakdown from '../components/Others/Budget/SampleBudgetBreak
 const BudgetPageLayout = () => {
     return (
         <div>
+
             <BudgetHero />
 
             <BudgetTravelTips />
 
             <SampleBudgetBreakdown />
+
         </div>
     )
 }
