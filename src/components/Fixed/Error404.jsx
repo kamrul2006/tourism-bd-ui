@@ -5,11 +5,19 @@ import errorLogo from "/Logo/error.png";
 const NotFound = () => {
     return (
         <div
-            className="min-h-screen flex items-center justify-center bg-cover bg-center relative"
+            className="overflow-hidden  min-h-screen flex items-center justify-center bg-cover bg-center relative"
             style={{
                 backgroundImage: "url('/images/login-bg.png')"
             }}
         >
+
+            <div
+                className="absolute inset-0 bg-cover bg-center scale-105 animate-[slowZoom_20s_linear_infinite]"
+                style={{
+                    backgroundImage: "url('/images/login-bg.png')",
+                }}
+            />
+
             {/* Dark overlay */}
             <div className="absolute inset-0 bg-black/60"></div>
 
