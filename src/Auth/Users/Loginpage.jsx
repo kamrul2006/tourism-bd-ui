@@ -77,7 +77,7 @@ const LoginPage = () => {
 
     return (
         <div
-            className="min-h-screen relative flex items-center justify-center bg-cover bg-center  px-4"
+            className="min-h-screen relative flex items-center justify-center bg-cover   px-4"
             style={{ backgroundImage: "url('/images/Auth/login-bg.png')" }}
         >
             {/* Overlay */}
