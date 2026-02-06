@@ -35,17 +35,24 @@ const tipsData = [
 
 export default function BudgetTravelTips() {
     return (
-        <section className="py-16 md:py-20 bg-[#f7f4ef]">
+        <section className="py-16  bg-[#f7f4ef]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-                {/* Title */}
-                <Fade direction="down" triggerOnce>
-                    <div className="flex items-center justify-center mb-12">
-                        <div className="h-1 w-24 sm:w-40 md:w-80 rounded-full bg-linear-to-l from-gray-400 to-[#f7f4ef]"></div>
-                        <h2 className="mx-4 chicleRegular text-2xl sm:text-3xl md:text-5xl text-emerald-900 text-center">
+
+                {/* Title with line */}
+                <Fade direction="up"  >
+
+                    <div className="flex flex-col md:flex-row items-center justify-center mb-5">
+
+                        <Slide>
+                            <div className=" md:block h-1 w-24 md:w-48 lg:w-80 rounded-full bg-linear-to-l from-gray-400 to-[#f7f4ef]" />
+                        </Slide>
+                        <h2 className="mx-2 text-3xl md:text-5xl chicleRegular text-emerald-900 text-center my-3 md:my-0">
                             Budget Travel Tips
                         </h2>
-                        <div className="h-1 w-24 sm:w-40 md:w-80 rounded-full bg-linear-to-r from-gray-400 to-[#f7f4ef]"></div>
+                        <Slide direction="right">
+                            <div className=" md:block h-1 w-24 md:w-48 lg:w-80 rounded-full bg-linear-to-r from-gray-400 to-[#f7f4ef]" />
+                        </Slide>
                     </div>
                 </Fade>
 

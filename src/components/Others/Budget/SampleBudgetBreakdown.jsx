@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Fade, Slide, Zoom } from "react-awesome-reveal";
 
 const budgetData = [
     {
@@ -33,90 +34,100 @@ const budgetData = [
 
 export default function SampleBudgetBreakdown() {
     return (
-        <section className="py-10 bg-[#f7f4ef]">
-            <div className="max-w-7xl mx-auto px-6">
-
-                {/* Section Title */}
-                <h2 className="text-3xl md:text-4xl font-bold text-center text-emerald-900 mb-12">
-
-                </h2>
+        <section className="py-14 bg-[#f7f4ef]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
 
-                {/* Title in middle with gray line */}
-                <div className="flex items-center justify-center mb-12">
-                    <div className="h-1 w-80 rounded-full bg-linear-to-l from-gray-400 to-[#f7f4ef]"></div>
-                    <h2 className="mx-4 chicleRegular text-3xl md:text-5xl  text-emerald-900">
-                        Sample Budget Breakdown
-                    </h2>
-                    <div className="h-1 w-80 rounded-full bg-linear-to-r from-gray-400 to-[#f7f4ef]"></div>
-                </div>
+                {/* Title with line */}
+                <Fade direction="up"  >
 
+                    <div className="flex flex-col md:flex-row items-center justify-center mb-5 md:mb-10">
 
+                        <Slide>
+                            <div className=" md:block h-1 w-24 md:w-48 lg:w-80 rounded-full bg-linear-to-l from-gray-400 to-[#f7f4ef]" />
+                        </Slide>
+                        <h2 className="mx-2 text-3xl md:text-5xl chicleRegular text-emerald-900 text-center my-3 md:my-0">
+                            Sample Budget Breakdown
+                        </h2>
+                        <Slide direction="right">
+                            <div className=" md:block h-1 w-24 md:w-48 lg:w-80 rounded-full bg-linear-to-r from-gray-400 to-[#f7f4ef]" />
+                        </Slide>
+                    </div>
+                </Fade>
 
                 {/* Background Container */}
-                <div
-                    className="relative rounded-3xl overflow-hidden shadow-2xl"
-                    style={{
-                        backgroundImage: "url(/images/budget/bangladesh-map-4k.png)",
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                    }}
-                >
-                    {/* Soft Overlay */}
-                    <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px]"></div>
+                <Zoom triggerOnce>
+                    <div
+                        className="relative rounded-3xl overflow-hidden shadow-2xl"
+                        style={{
+                            backgroundImage: "url(/images/budget/bangladesh-map-4k.png)",
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                        }}
+                    >
+                        {/* Overlay */}
+                        <div className="absolute inset-0 bg-white/20 backdrop-blur-[2px]" />
 
-                    {/* Content */}
-                    <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 md:p-12">
+                        {/* Content */}
+                        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 p-5 sm:p-8 md:p-12">
 
-                        {/* Left Cards */}
-                        <div className="space-y-6">
-                            {budgetData.map((item) => (
-                                <div
-                                    key={item.id}
-                                    className="flex gap-5 bg-white/90 rounded-2xl shadow-lg hover:shadow-xl transition"
-                                >
-                                    {/* Image */}
-                                    <img
-                                        src={item.image}
-                                        alt={item.title}
-                                        className="w-36 h-28 rounded-l-xl object-cover"
-                                    />
+                            {/* Left Cards */}
+                            <div className="space-y-6">
+                                {budgetData.map((item, index) => (
+                                    <Slide
+                                        key={item.id}
+                                        direction="left"
+                                        delay={index * 120}
+                                        triggerOnce
+                                    >
+                                        <div className="flex flex-col sm:flex-row gap-4 bg-white/90 rounded-2xl shadow-lg hover:shadow-xl transition">
 
-                                    {/* Text */}
-                                    <div className="flex-1 p-5">
-                                        <div className="flex justify-between items-center mb-1">
+                                            {/* Image */}
+                                            <img
+                                                src={item.image}
+                                                alt={item.title}
+                                                className="w-full sm:w-36 h-40 sm:h-28 object-cover rounded-t-2xl sm:rounded-l-2xl sm:rounded-tr-none"
+                                            />
 
-                                            <h3 className="text-xl md:text-3xl text-emerald-900 chicleRegular">
-                                                {item.title}
-                                            </h3>
+                                            {/* Text */}
+                                            <div className="flex-1 p-4 sm:p-5">
+                                                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-2">
 
-                                            <span className="text-2xl font-semibold font-mono text-emerald-900">
-                                                {item.price}
-                                            </span>
+                                                    <h3 className="text-xl sm:text-2xl md:text-3xl text-emerald-900 chicleRegular">
+                                                        {item.title}
+                                                    </h3>
 
+                                                    <span className="text-xl sm:text-2xl font-semibold font-mono text-emerald-900">
+                                                        {item.price}
+                                                    </span>
+                                                </div>
+
+                                                <p className="text-gray-600 text-sm leading-relaxed">
+                                                    {item.desc}
+                                                </p>
+                                            </div>
                                         </div>
-                                        <p className="text-gray-600 text-sm leading-relaxed">
-                                            {item.desc}
-                                        </p>
-                                    </div>
-                                </div>
-                            ))}
+                                    </Slide>
+                                ))}
+                            </div>
+
+                            {/* Right empty space for map */}
+                            <div className="hidden lg:block" />
                         </div>
 
-                        {/* Right Side (Empty for Map Focus) */}
-                        <div className="hidden lg:block"></div>
+                        {/* CTA */}
+                        <Fade direction="up" delay={300} triggerOnce>
+                            <div className="relative z-10 text-center pb-10">
+                                <Link
+                                    to="/budget/details"
+                                    className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded font-semibold shadow-xl transition transform hover:scale-110"
+                                >
+                                    View Detailed Guide
+                                </Link>
+                            </div>
+                        </Fade>
                     </div>
-
-                    {/* CTA Button */}
-                    <div className="relative z-10 text-center pb-10">
-                        <Link
-                            to="/budget/details"
-                            className="inline-block bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded font-semibold shadow-lg transition transform hover:scale-105"
-                        >
-                            View Detailed Guide
-                        </Link>
-                    </div>
-                </div>
+                </Zoom>
             </div>
         </section>
     );
