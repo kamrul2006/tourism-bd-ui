@@ -116,14 +116,14 @@ export default function Footer() {
                     © {new Date().getFullYear()} TourismBD Ltd.
                 </div>
                 {/* Developer Info Bottom-Right */}
-                <div className="absolute bottom-4 right-6 text-right">
+                <div className="absolute bottom-4 right-2 md:right-6 text-right text-xs md:text-base">
                     <a
                         href="https://kiapurba.vercel.app"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-orange-400 hover:text-orange-500 font-semibold transition hover:underline font-mono"
+                        className="text-orange-400 hover:text-orange-500 font-semibold transition hover:underline font-mono flex flex-col md:flex-row items-center justify-center md:gap-2"
                     >
-                        <span className="text-white font-light font-serif"> Developed by : </span>
+                        <span className="text-white/30 text-xs md:text-base font-light "> Developed by : </span>
                         Kamrul Islam Apurba.
                     </a>
                 </div>
