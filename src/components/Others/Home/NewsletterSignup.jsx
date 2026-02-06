@@ -5,9 +5,15 @@ export default function NewsletterSignup() {
     return (
         <div className="bg-[#f7f4ef] py-10">
             <section
-                className="relative py-24 bg-cover bg-center rounded-bl-[80px] rounded-tr-[80px] mx-4 animate-[slowZoom_20s_linear_infinite]"
-                style={{ backgroundImage: `url(${newsletterBg})` }}
-            >
+                className="relative py-24 bg-cover bg-center rounded-bl-[80px] rounded-tr-[80px] mx-4 overflow-hidden">
+
+                <div
+                    className="absolute inset-0 bg-cover bg-center scale-105 animate-[slowZoom_20s_linear_infinite]"
+                    style={{ backgroundImage: `url(${newsletterBg})` }}
+
+                />
+
+
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-linear-to-r from-emerald-900/80 via-emerald-800/70 to-black/60 rounded-bl-[80px] rounded-tr-[80px]"></div>
 
@@ -48,6 +54,6 @@ export default function NewsletterSignup() {
                     </Fade>
                 </div>
             </section>
-        </div>
+        </div >
     );
 }

@@ -99,12 +99,19 @@ const ReviewSection = () => {
 
     return (
         <section
-            className="relative py-10 bg-cover bg-center animate-[slowZoom_20s_linear_infinite]"
-            style={{
-                backgroundImage:
-                    "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee')",
-            }}
+            className="relative py-10 bg-cover bg-center overflow-hidden"
+
         >
+
+            <div
+                className="absolute inset-0 bg-cover bg-center scale-105 animate-[slowZoom_20s_linear_infinite]"
+                style={{
+                    backgroundImage:
+                        "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee')",
+                }}
+            />
+
+
             {/*---------- Overlay----------- */}
             <div className="absolute inset-0 bg-black/60"></div>
 

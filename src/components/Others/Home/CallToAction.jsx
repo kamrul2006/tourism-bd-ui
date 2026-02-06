@@ -4,9 +4,16 @@ import { Fade, Zoom, Slide } from "react-awesome-reveal";
 export default function CallToAction() {
     return (
         <section
-            className="relative py-20 sm:py-24 md:py-28 bg-cover bg-center overflow-hidden animate-[slowZoom_20s_linear_infinite]"
-            style={{ backgroundImage: "url('/images/cta.webp')" }}
+            className="relative py-20 sm:py-24 md:py-28 bg-cover bg-center overflow-hidden"
         >
+
+            <div
+                className="absolute inset-0 bg-cover bg-center scale-105 animate-[slowZoom_20s_linear_infinite]"
+                style={{ backgroundImage: "url('/images/cta.webp')" }}
+
+            />
+
+
             {/* Overlay */}
             <div className="absolute inset-0 bg-linear-to-tr from-black/50 via-black/75 to-black/50" />
 

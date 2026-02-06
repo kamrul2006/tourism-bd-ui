@@ -6,9 +6,14 @@ import { Fade, Zoom, Slide } from "react-awesome-reveal";
 export default function Hero() {
     return (
         <section
-            className="relative w-full min-h-screen bg-cover bg-center flex items-center justify-center animate-[slowZoom_20s_linear_infinite]"
-            style={{ backgroundImage: `url(${heroImage})` }}
+            className="relative w-full min-h-screen bg-cover bg-center flex items-center justify-center overflow-hidden"
         >
+
+            <div
+                className="absolute inset-0 bg-cover bg-center scale-105 animate-[slowZoom_20s_linear_infinite]"
+                style={{ backgroundImage: `url(${heroImage})` }}
+            />
+
             {/* Overlay */}
             <div className="absolute inset-0 bg-black/60"></div>
 
