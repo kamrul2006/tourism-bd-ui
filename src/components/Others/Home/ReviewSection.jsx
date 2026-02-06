@@ -99,7 +99,7 @@ const ReviewSection = () => {
 
     return (
         <section
-            className="relative py-10 bg-cover bg-center"
+            className="relative py-10 bg-cover bg-center animate-[slowZoom_20s_linear_infinite]"
             style={{
                 backgroundImage:
                     "url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee')",

@@ -5,7 +5,7 @@ export default function NewsletterSignup() {
     return (
         <div className="bg-[#f7f4ef] py-10">
             <section
-                className="relative py-24 bg-cover bg-center rounded-bl-[80px] rounded-tr-[80px] mx-4"
+                className="relative py-24 bg-cover bg-center rounded-bl-[80px] rounded-tr-[80px] mx-4 animate-[slowZoom_20s_linear_infinite]"
                 style={{ backgroundImage: `url(${newsletterBg})` }}
             >
                 {/* Gradient Overlay */}
