@@ -54,9 +54,18 @@ export default function TipsGrid() {
 
             {/* ----------------- Hero Section ----------------- */}
             <section
-                className="relative h-[65vh] flex items-center justify-center bg-cover bg-center pt-20"
-                style={{ backgroundImage: "url('/images/Tips/tips-bg.jpg')" }}
+                className="relative h-[65vh] flex items-center justify-center bg-cover bg-center pt-20 overflow-hidden"
+
             >
+
+                <div
+                    className="absolute inset-0 bg-cover bg-center scale-105 animate-[slowZoom_20s_linear_infinite]"
+                    style={{ backgroundImage: "url('/images/Tips/tips-bg.jpg')" }}
+
+                />
+
+
+
                 <div className="absolute inset-0 bg-black/70"></div>
                 <div className="relative z-10 text-center max-w-3xl px-6">
                     <Fade direction="down" triggerOnce>
