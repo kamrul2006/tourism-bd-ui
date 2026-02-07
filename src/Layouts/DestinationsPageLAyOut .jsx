@@ -6,11 +6,13 @@ import BeInspired from '../components/Others/Destanition/BeInspired'
 const DestinationsPageLAyOut = () => {
     return (
         <div>
+
             <DestinationHero />
 
             <DestinationsPage />
 
             <BeInspired />
+
         </div>
     )
 }
