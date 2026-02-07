@@ -121,10 +121,11 @@ export default function Footer() {
                         href="https://kiapurba.vercel.app"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-orange-400 hover:text-orange-500 font-semibold transition hover:underline font-mono flex flex-col md:flex-row items-center justify-center md:gap-2"
+                        className="text-orange-400 hover:text-orange-500 hover:font-semibold transition-all font-mono flex flex-col md:flex-row items-center justify-center md:gap-2"
                     >
                         <span className="text-white/30 text-xs md:text-base font-light "> Developed by : </span>
-                        Kamrul Islam Apurba.
+                        <span className=" hover:border-b-2  transition-all border-orange-500 px-0.5 pb-0.5 "> Kamrul Islam Apurba</span>
+
                     </a>
                 </div>
             </div>

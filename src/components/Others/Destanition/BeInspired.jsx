@@ -6,16 +6,22 @@ export default function BeInspired() {
         <section className="pb-20 bg-[#f7f4ef]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
-                {/* Section Title */}
-                <Slide direction="down" triggerOnce>
-                    <div className="flex items-center justify-center mb-14">
-                        <div className="hidden sm:block h-1 w-40 md:w-64 rounded-full bg-linear-to-l from-gray-400 to-transparent"></div>
-                        <h2 className="mx-4 chicleRegular text-3xl sm:text-4xl md:text-5xl text-emerald-900 text-center">
+                {/* Title with line */}
+                <Fade direction="up"  >
+
+                    <div className="flex flex-col md:flex-row items-center justify-center mb-5">
+
+                        <Slide>
+                            <div className=" md:block h-1 w-24 md:w-48 lg:w-80 rounded-full bg-linear-to-l from-gray-400 to-[#f7f4ef]" />
+                        </Slide>
+                        <h2 className="mx-2 text-3xl md:text-5xl chicleRegular text-emerald-900 text-center my-3 md:my-0">
                             Be Inspired
                         </h2>
-                        <div className="hidden sm:block h-1 w-40 md:w-64 rounded-full bg-linear-to-r from-gray-400 to-transparent"></div>
+                        <Slide direction="right">
+                            <div className=" md:block h-1 w-24 md:w-48 lg:w-80 rounded-full bg-linear-to-r from-gray-400 to-[#f7f4ef]" />
+                        </Slide>
                     </div>
-                </Slide>
+                </Fade>
 
                 {/* Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
