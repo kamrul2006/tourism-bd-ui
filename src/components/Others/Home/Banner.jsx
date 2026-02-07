@@ -1,5 +1,5 @@
 import React from "react";
-import heroImage from "/images/hero.png";
+import heroImage from "/images/hero.avif";
 import { Link } from "react-router-dom";
 import { Fade, Zoom, Slide } from "react-awesome-reveal";
 

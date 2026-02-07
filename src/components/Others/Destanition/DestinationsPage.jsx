@@ -55,6 +55,7 @@ export default function PopularDestinations() {
                                 <img
                                     src={place.image}
                                     alt={place.name}
+                                    loading="lazy"
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
 

@@ -9,9 +9,10 @@ export default function DestinationHero() {
             <div
                 className="absolute inset-0 bg-cover bg-center scale-105 animate-[slowZoom_20s_linear_infinite]"
                 style={{
-                    backgroundImage: "url('/images/Des/dbg.jpg')",
+                    backgroundImage: "url('/images/Des/dbg.avif')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
+                    loading: "lazy"
                 }}
             />
 

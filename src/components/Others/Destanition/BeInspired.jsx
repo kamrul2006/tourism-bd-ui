@@ -9,7 +9,7 @@ export default function BeInspired() {
                 {/* Title with line */}
                 <Fade direction="up"  >
 
-                    <div className="flex flex-col md:flex-row items-center justify-center mb-5">
+                    <div className="flex flex-col md:flex-row items-center justify-center mb-5 md:mb-10">
 
                         <Slide>
                             <div className=" md:block h-1 w-24 md:w-48 lg:w-80 rounded-full bg-linear-to-l from-gray-400 to-[#f7f4ef]" />

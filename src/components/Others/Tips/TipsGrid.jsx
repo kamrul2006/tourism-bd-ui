@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Fade, Slide } from "react-awesome-reveal";
 import { MdKeyboardArrowDown, MdSearchOff } from "react-icons/md";
 import Loader from "../../Fixed/Loader";
+import TipsHero from "./THero";
 
 export default function TipsGrid() {
     const [tips, setTips] = useState([]);
@@ -20,7 +21,7 @@ export default function TipsGrid() {
     useEffect(() => {
         const fetchTips = async () => {
             try {
-                const res = await fetch("http://localhost:5000/blogs");
+                const res = await fetch("http://localhost:5000/blog");
                 const data = await res.json();
                 setTips([...data].reverse());
             } catch (err) {
@@ -46,8 +47,14 @@ export default function TipsGrid() {
         return <div >
             <Loader />
         </div>;
+
     if (error)
-        return <div className="py-20 text-center text-red-500 font-semibold">{error}</div>;
+        return
+    <div>
+        <TipsHero />
+        <div className="py-20 text-center text-red-500 font-semibold">{error}</div>
+    </div>
+        ;
 
     return (
         <section className=" bg-[#f7f4ef]">
