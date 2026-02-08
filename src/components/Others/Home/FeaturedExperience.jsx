@@ -30,9 +30,16 @@ export default function FeaturedExperience() {
                 {/* ================= Featured Experience ================= */}
                 <Fade direction="up" triggerOnce>
                     <div
-                        className="relative rounded-3xl overflow-hidden shadow-2xl bg-cover bg-center min-h-105 md:min-h-130 flex items-center animate-[slowZoom_20s_linear_infinite]"
-                        style={{ backgroundImage: "url('/images/tipsBg.webp')" }}
+                        className="relative rounded-3xl  shadow-2xl bg-cover bg-center min-h-105 md:min-h-130 flex items-center overflow-hidden"
                     >
+
+
+                        <div
+                            className="absolute inset-0 bg-cover bg-center scale-105 animate-[slowZoom_20s_linear_infinite]"
+                            style={{ backgroundImage: "url('/images/tipsBg.webp')" }}
+                        />
+
+
                         <div className="absolute inset-0 bg-linear-to-r from-black/90 to-black/30"></div>
 
                         <div className="relative z-10 px-6 sm:px-10 md:px-16 max-w-xl text-white">
