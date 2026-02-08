@@ -8,6 +8,7 @@ import TransportPageLAyOut from "../Layouts/TransportPageLAyOut";
 import BudgetPageLayout from "../Layouts/BudgetPageLayout";
 import LoginPage from "../Auth/Users/Loginpage";
 import SignupPage from "../Auth/Users/SignupPage";
+import ReadTip from "../components/Others/Tips/ReadTip";
 
 
 export const router = createBrowserRouter([
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
                 path: '/budget',
                 element: <BudgetPageLayout />
             },
+            {
+                path: "/tips/:id",
+                element: < ReadTip />
+            }
         ]
     },
     // ---------------------authentication--------------
