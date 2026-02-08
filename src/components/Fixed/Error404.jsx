@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import errorLogo from "/Logo/error.png";
+import { VscDebugDisconnect } from "react-icons/vsc";
 
 
 const NotFound = () => {
@@ -27,11 +28,11 @@ const NotFound = () => {
                 <img
                     src="/Logo/logo.png"
                     alt="TourismBD"
-                    className="h-14 mx-auto mb-6 drop-shadow-lg"
+                    className="h-14 mx-auto mb-2 drop-shadow-lg"
                 />
 
                 {/* 404 */}
-                <h1 className="text-[120px] md:text-[160px] font-extrabold leading-none text-white/50 animate-pulse drop-shadow-xl">
+                <h1 className="text-[120px] md:text-[200px]  leading-none text-white/50 animate-pulse drop-shadow-xl flex l items-center justify-center">
                     404
                 </h1>
 
