@@ -9,6 +9,7 @@ import BudgetPageLayout from "../Layouts/BudgetPageLayout";
 import LoginPage from "../Auth/Users/Loginpage";
 import SignupPage from "../Auth/Users/SignupPage";
 import ReadTip from "../components/Others/Tips/ReadTip";
+import TravelPlanner from "../components/Others/TravelPlanner";
 
 
 export const router = createBrowserRouter([
@@ -40,7 +41,11 @@ export const router = createBrowserRouter([
             {
                 path: "/tips/:id",
                 element: < ReadTip />
-            }
+            },
+            {
+                path: "/planner",
+                element: < TravelPlanner />
+            },
         ]
     },
     // ---------------------authentication--------------
