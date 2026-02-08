@@ -16,6 +16,7 @@
     "axios": "^1.13.4",
     "firebase": "^12.8.0",
     "jspdf": "^4.1.0",
+    "jspdf-autotable": "^5.0.7",
     "react": "^19.2.0",
     "react-awesome-reveal": "^4.3.1",
     "react-dom": "^19.2.0",
