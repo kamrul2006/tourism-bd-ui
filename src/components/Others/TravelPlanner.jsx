@@ -71,6 +71,7 @@ export default function TravelPlanner() {
             });
         }
 
+
         setError("");
         setLoading(true);
 
