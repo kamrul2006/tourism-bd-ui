@@ -162,7 +162,7 @@ export default function Navbar() {
                                 <div className="flex items-center gap-2">
 
                                     <img
-                                        src={user.photoURL || "/images/user.png"}
+                                        src={user.photoURL || "/images/fav.png"}
                                         className="w-8 h-8 rounded-full border-2 border-orange-400"
                                     />
 

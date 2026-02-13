@@ -10,6 +10,8 @@ import LoginPage from "../Auth/Users/Loginpage";
 import SignupPage from "../Auth/Users/SignupPage";
 import ReadTip from "../components/Others/Tips/ReadTip";
 import TravelPlanner from "../components/Others/TravelPlanner";
+import ProfilePageLayouts from "../Layouts/ProfilePageLayouts";
+import ManageUsers from "../Abdc";
 
 
 export const router = createBrowserRouter([
@@ -56,6 +58,17 @@ export const router = createBrowserRouter([
     {
         path: "/signup",
         element: <SignupPage />
+    },
+    {
+        path: "/profilePage",
+        element: <ProfilePageLayouts />,
+        errorElement: <NotFound />,
+        children: [
+            {
+                path: "/profilePage/s",
+                element: <ManageUsers />
+            },
+        ]
     },
 
 ]);
