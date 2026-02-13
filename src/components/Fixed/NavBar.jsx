@@ -5,7 +5,6 @@ import { MdTipsAndUpdates } from "react-icons/md";
 import { Fade, Slide } from "react-awesome-reveal";
 import logo from "/Logo/logo.png";
 import { AuthContext } from "../../Auth/Providers/AuthProvider";
-import { FaDoorOpen } from "react-icons/fa6";
 import { IoLogIn } from "react-icons/io5";
 
 export default function Navbar() {
@@ -22,7 +21,7 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // Close dropdown on outside click
+    // ------------Close dropdown on outside click--------------
     useEffect(() => {
         const handleClickOutside = (e) => {
             if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -54,12 +53,12 @@ export default function Navbar() {
         <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${navbarBg}`}>
             <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
 
-                {/* Logo */}
+                {/* --------Logo---------- */}
                 <Link to="/">
                     <img src={logo} alt="TourismBD" className="w-28 h-7 drop-shadow drop-shadow-amber-50" />
                 </Link>
 
-                {/* Desktop Menu */}
+                {/*------------- Desktop Menu ----------*/}
                 <ul className="hidden md:flex gap-10 absolute left-1/2 -translate-x-1/2">
                     {navItems.map((item) => (
                         <Slide key={item.path} direction="down" triggerOnce>
@@ -75,7 +74,7 @@ export default function Navbar() {
                     ))}
                 </ul>
 
-                {/* Right Section */}
+                {/*--------------- Right Section --------------*/}
                 <div className="hidden md:flex items-center gap-4">
                     {!user ? (
                         <>
@@ -103,9 +102,12 @@ export default function Navbar() {
                             {dropdown && (
                                 <Fade direction="down" triggerOnce>
                                     <div className="absolute right-0 mt-3 w-48 bg-white rounded-xl shadow-xl overflow-hidden">
-                                        <div className="px-4 py-3 text-sm text-gray-700 font-semibold">
-                                            {user.displayName || "User Name"}
-                                        </div>
+                                        <Link to='/profilePage' >
+                                            <p className=" flex items-center gap-2 p-2 text-gray-700 /90 hover:text-orange-400 transition font-medium relative after:absolute after:w-0 after:h-0.5 after:bg-orange-400 after:left-0 after:-bottom-1 after:transition-all hover:after:w-full"
+                                            >
+                                                <FaUserCircle />    My Profile
+                                            </p>
+                                        </Link>
                                         <button
                                             onClick={UserSignOut}
                                             className="w-full text-left px-4 py-2 text-red-500 hover:bg-gray-100 transition flex items-center gap-2"
@@ -156,11 +158,20 @@ export default function Navbar() {
                         </div>
                     ) : (
                         <div className="flex flex-col items-center pt-4">
-                            <img
-                                src={user.photoURL || "/images/user.png"}
-                                className="w-12 h-12 rounded-full border-2 border-orange-400"
-                            />
-                            <p className="text-white mt-2">{user.displayName}</p>
+                            <Link to='/profilePage'>
+                                <div className="flex items-center gap-2">
+
+                                    <img
+                                        src={user.photoURL || "/images/user.png"}
+                                        className="w-8 h-8 rounded-full border-2 border-orange-400"
+                                    />
+
+                                    <p className=" text-white hover:text-orange-400 transition font-semibold text-lg">
+                                        My Profile
+                                    </p>
+
+                                </div>
+                            </Link>
                             <button
                                 onClick={UserSignOut}
                                 className="mt-3 text-red-400 hover:underline flex items-center gap-2"
