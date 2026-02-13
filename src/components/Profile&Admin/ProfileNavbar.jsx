@@ -174,7 +174,7 @@ export default function ProfileNavbar() {
                             </NavLink>
 
                             <NavLink
-                                to="/profile"
+                                to="/profilePage/profile"
                                 className={({ isActive }) =>
                                     `${navLinkStyle} ${isActive ? activeStyle : ""}`
                                 }
@@ -184,7 +184,7 @@ export default function ProfileNavbar() {
                             </NavLink>
 
                             <NavLink
-                                to="/my-planes"
+                                to="/profilePage/my-planes"
                                 className={({ isActive }) =>
                                     `${navLinkStyle} ${isActive ? activeStyle : ""}`
                                 }
@@ -196,7 +196,7 @@ export default function ProfileNavbar() {
                             {(role === "admin" || role === "super-admin") && (
                                 <>
                                     <NavLink
-                                        to="/manage-users"
+                                        to="/profilePage/manage-users"
                                         className={({ isActive }) =>
                                             `${navLinkStyle} ${isActive ? activeStyle : ""}`
                                         }
@@ -206,7 +206,7 @@ export default function ProfileNavbar() {
                                     </NavLink>
 
                                     <NavLink
-                                        to="/manage-reviews"
+                                        to="/profilePage/manage-reviews"
                                         className={({ isActive }) =>
                                             `${navLinkStyle} ${isActive ? activeStyle : ""}`
                                         }
@@ -216,7 +216,7 @@ export default function ProfileNavbar() {
                                     </NavLink>
 
                                     <NavLink
-                                        to="/add-tips"
+                                        to="/profilePage/add-tips"
                                         className={({ isActive }) =>
                                             `${navLinkStyle} ${isActive ? activeStyle : ""}`
                                         }
@@ -226,7 +226,7 @@ export default function ProfileNavbar() {
                                     </NavLink>
 
                                     <NavLink
-                                        to="/manage-planes"
+                                        to="/profilePage/manage-planes"
                                         className={({ isActive }) =>
                                             `${navLinkStyle} ${isActive ? activeStyle : ""}`
                                         }
