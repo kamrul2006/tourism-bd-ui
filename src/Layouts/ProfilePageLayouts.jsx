@@ -6,6 +6,7 @@ import ProfileNavbar from '../components/Profile&Admin/ProfileNavbar'
 const ProfilePageLayouts = () => {
     return (
         <div>
+
             <ProfileNavbar />
 
             <Outlet />
