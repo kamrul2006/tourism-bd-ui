@@ -1,7 +1,7 @@
 import { Navigate, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
-import CustomLoader from "../../Components/Fixed/CustomLoader";
+import Loader from "../../components/Fixed/Loader";
 
 const PrivetRout = ({ children }) => {
     const { user, loading } = useContext(AuthContext)
@@ -12,7 +12,7 @@ const PrivetRout = ({ children }) => {
 
     if (loading) {
         return (<div>
-            <CustomLoader />
+            <Loader />
         </div>)
     }
 
@@ -21,7 +21,7 @@ const PrivetRout = ({ children }) => {
     }
 
     return (
-        <Navigate state={location.pathname} to={'/login'}></Navigate>
+        <Navigate to={'/login'}></Navigate>
     );
 };
 

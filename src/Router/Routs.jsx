@@ -12,6 +12,7 @@ import ReadTip from "../components/Others/Tips/ReadTip";
 import TravelPlanner from "../components/Others/TravelPlanner";
 import ProfilePageLayouts from "../Layouts/ProfilePageLayouts";
 import ManageUsers from "../components/Profile&Admin/UserManage";
+import PrivetRout from "../Auth/Privet/Privetrought";
 
 
 export const router = createBrowserRouter([
@@ -30,23 +31,23 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/destinations',
-                element: <DestinationsPageLAyOut />
+                element: <PrivetRout><DestinationsPageLAyOut /></PrivetRout>
             },
             {
                 path: '/transport',
-                element: <TransportPageLAyOut />
+                element: <PrivetRout><TransportPageLAyOut /></PrivetRout>
             },
             {
                 path: '/budget',
-                element: <BudgetPageLayout />
+                element: <PrivetRout><BudgetPageLayout /></PrivetRout>
             },
             {
                 path: "/tips/:id",
-                element: < ReadTip />
+                element: <PrivetRout>< ReadTip /></PrivetRout>
             },
             {
                 path: "/planner",
-                element: < TravelPlanner />
+                element: <PrivetRout><TravelPlanner /></PrivetRout>
             },
         ]
     },
@@ -61,7 +62,7 @@ export const router = createBrowserRouter([
     },
     {
         path: "/profilePage",
-        element: <ProfilePageLayouts />,
+        element: <PrivetRout><ProfilePageLayouts /></PrivetRout>,
         errorElement: <NotFound />,
         children: [
             {
