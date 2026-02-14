@@ -3,30 +3,68 @@ import { FaCalendar, FaMapPin, FaUserTie } from "react-icons/fa";
 import { CgMail } from "react-icons/cg";
 import { Fade, Slide } from "react-awesome-reveal";
 import { AuthContext } from "../../Auth/Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const UserProfile = () => {
     const [userInfo, setUserInfo] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
     const { user } = useContext(AuthContext);
 
-    useEffect(() => {
+    // Fetch user
+    const fetchUser = () => {
         if (!user?.email) return;
 
-        fetch(`https://tourism-bd-server.vercel.app/users/${user.email}`)
-            .then((res) => res.json())
-            .then((data) => {
+        fetch(`http://localhost:5000/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => {
                 setUserInfo(data);
                 setLoading(false);
             })
-            .catch((err) => {
+            .catch(err => {
                 console.error(err);
                 setLoading(false);
             });
+    };
+
+    useEffect(() => {
+        fetchUser();
     }, [user]);
+
+    const handleUpdate = async (e) => {
+        e.preventDefault();
+
+        const form = e.target;
+        const updatedData = {
+            name: form.name.value,
+            address: form.address.value,
+            dob: form.dob.value,
+        };
+
+        try {
+            const res = await fetch(
+                `http://localhost:5000/users/${user.email}`,
+                {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(updatedData),
+                }
+            );
+
+            if (res.ok) {
+                Swal.fire("Success!", "Profile updated successfully!", "success");
+                setIsOpen(false);
+                fetchUser();
+            }
+        } catch (error) {
+            console.error(error);
+            Swal.fire("Error!", "Update failed!", "error");
+        }
+    };
 
     if (loading) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-slate-100">
+            <div className="min-h-screen flex items-center justify-center">
                 <span className="loading loading-spinner text-primary"></span>
             </div>
         );
@@ -39,7 +77,7 @@ const UserProfile = () => {
 
             {/* 🔥 HERO SECTION */}
             <div
-                className="relative pb-20 w-full bg-cover bg-center"
+                className="relative pb-20 w-full bg-cover"
                 style={{
                     backgroundImage:
                         "url('/images/phbg.png')",
@@ -49,7 +87,7 @@ const UserProfile = () => {
 
                 <Fade triggerOnce>
                     <div className="relative z-10 pt-20 flex items-center justify-center h-full">
-                        <h1 className="text-white text-3xl md:text-5xl font-bold tracking-wide drop-shadow-lg">
+                        <h1 className="text-white text-3xl md:text-6xl  tracking-wide drop-shadow-lg chicleRegular">
                             TourismBD Profile
                         </h1>
                     </div>
@@ -166,7 +204,11 @@ const UserProfile = () => {
 
                             {/* Edit Button */}
                             <div className="mt-12 text-center md:text-right">
-                                <button className="px-8 py-3 bg-linear-to-r from-sky-600 to-indigo-600 hover:from-indigo-600 hover:to-sky-600 text-white font-semibold rounded-xl shadow-lg transition duration-300">
+                                <button
+
+                                    onClick={() => setIsOpen(true)}
+
+                                    className="px-8 py-3 bg-linear-to-r from-sky-600 to-indigo-600 hover:from-indigo-600 hover:to-sky-600 text-white font-semibold rounded-xl shadow-lg transition duration-300">
                                     Edit Profile
                                 </button>
                             </div>
@@ -178,7 +220,68 @@ const UserProfile = () => {
             </div>
 
 
-        </div>
+
+
+            {/* 🔥 EDIT MODAL */}
+            {
+                isOpen && (
+                    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                        <Fade triggerOnce>
+                            <div className="bg-white rounded-2xl p-8 w-full max-w-md shadow-2xl">
+
+                                <h2 className="text-2xl font-bold mb-6">
+                                    Edit Profile
+                                </h2>
+
+                                <form onSubmit={handleUpdate} className="space-y-4">
+
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        defaultValue={userInfo?.name}
+                                        placeholder="Name"
+                                        className="w-full border p-3 rounded-lg"
+                                    />
+
+                                    <input
+                                        type="text"
+                                        name="address"
+                                        defaultValue={userInfo?.address}
+                                        placeholder="Address"
+                                        className="w-full border p-3 rounded-lg"
+                                    />
+
+                                    <input
+                                        type="date"
+                                        name="dob"
+                                        defaultValue={userInfo?.dob}
+                                        className="w-full border p-3 rounded-lg"
+                                    />
+
+                                    <div className="flex justify-end gap-3 pt-4">
+                                        <button
+                                            type="button"
+                                            onClick={() => setIsOpen(false)}
+                                            className="px-4 py-2 bg-gray-400 text-white rounded-lg"
+                                        >
+                                            Cancel
+                                        </button>
+
+                                        <button
+                                            type="submit"
+                                            className="px-4 py-2 bg-indigo-600 text-white rounded-lg"
+                                        >
+                                            Save Changes
+                                        </button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </Fade>
+                    </div>
+                )
+            }
+        </div >
     );
 };
 

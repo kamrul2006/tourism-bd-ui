@@ -102,7 +102,7 @@ export default function Navbar() {
                             {dropdown && (
                                 <Fade direction="down" triggerOnce>
                                     <div className="absolute right-0 mt-3 w-48 bg-white rounded-xl shadow-xl overflow-hidden">
-                                        <Link to='/profilePage' >
+                                        <Link to='/profilePage/profile' >
                                             <p className=" flex items-center gap-2 p-2 text-gray-700 /90 hover:text-orange-400 transition font-medium relative after:absolute after:w-0 after:h-0.5 after:bg-orange-400 after:left-0 after:-bottom-1 after:transition-all hover:after:w-full"
                                             >
                                                 <FaUserCircle />    My Profile
@@ -158,7 +158,7 @@ export default function Navbar() {
                         </div>
                     ) : (
                         <div className="flex flex-col items-center pt-4">
-                            <Link to='/profilePage'>
+                            <Link to='/profilePage/profile'>
                                 <div className="flex items-center gap-2">
 
                                     <img
