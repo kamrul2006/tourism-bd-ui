@@ -14,6 +14,7 @@ import {
 } from "react-icons/fa";
 import { Fade, Slide } from "react-awesome-reveal";
 import { AuthContext } from "../../Auth/Providers/AuthProvider";
+import { FaPlaneCircleExclamation } from "react-icons/fa6";
 
 export default function ProfileNavbar() {
     // -------- AUTH CONTEXT --------
@@ -128,7 +129,7 @@ export default function ProfileNavbar() {
                                             `${navLinkStyle} ${isActive ? activeStyle : ""}`
                                         }
                                     >
-                                        <FaPlane />
+                                        <FaPlaneCircleExclamation />
                                     </NavLink>
                                 </>
                             )}
