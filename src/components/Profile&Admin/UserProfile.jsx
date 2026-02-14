@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
-import { FaCalendar, FaMapPin, FaUserTie } from "react-icons/fa";
+import { FaCalendar, FaMapPin, FaUserTie, FaUserEdit, FaMapMarkerAlt, FaCalendarAlt, FaTimes } from "react-icons/fa";
+import { Fade, Zoom, Slide } from "react-awesome-reveal";
 import { CgMail } from "react-icons/cg";
-import { Fade, Slide } from "react-awesome-reveal";
 import { AuthContext } from "../../Auth/Providers/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -75,7 +75,7 @@ const UserProfile = () => {
     return (
         <div className="min-h-screen bg-slate-100">
 
-            {/* 🔥 HERO SECTION */}
+            {/* ----------------- HERO SECTION---------------- */}
             <div
                 className="relative pb-20 w-full bg-cover"
                 style={{
@@ -94,7 +94,7 @@ const UserProfile = () => {
                 </Fade>
 
 
-                {/* 👤 PROFILE CARD */}
+                {/* --------------- PROFILE CARD ------------*/}
                 <div className="max-w-6xl mx-auto px-4">
                     <Slide direction="up" triggerOnce>
                         <div className="mt-15 relative bg-white/50 rounded-3xl shadow-2xl p-8 md:p-12">
@@ -222,62 +222,94 @@ const UserProfile = () => {
 
 
 
-            {/* 🔥 EDIT MODAL */}
+            {/* -------------- EDIT MODAL--------------------- */}
+
             {
                 isOpen && (
-                    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                        <Fade triggerOnce>
-                            <div className="bg-white rounded-2xl p-8 w-full max-w-md shadow-2xl">
+                    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
 
-                                <h2 className="text-2xl font-bold mb-6">
-                                    Edit Profile
-                                </h2>
+                        <Zoom triggerOnce>
+                            <div className="relative w-xl md:w-3xl bg-white/90 backdrop-blur-lg rounded-3xl shadow-2xl p-8 border border-white/30">
 
-                                <form onSubmit={handleUpdate} className="space-y-4">
+                                {/* --------------------- Close Button----------------- */}
+                                <button
+                                    onClick={() => setIsOpen(false)}
+                                    className="absolute top-4 right-4 text-gray-500 hover:text-red-500 transition"
+                                >
+                                    <FaTimes size={20} />
+                                </button>
 
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        defaultValue={userInfo?.name}
-                                        placeholder="Name"
-                                        className="w-full border p-3 rounded-lg"
-                                    />
+                                {/* --------------------- Header----------------- */}
+                                <div className="flex items-center gap-3 mb-6">
+                                    <div className="bg-indigo-100 p-3 rounded-full text-indigo-600">
+                                        <FaUserEdit size={22} />
+                                    </div>
+                                    <h2 className="text-2xl font-bold text-gray-800">
+                                        Edit Profile
+                                    </h2>
+                                </div>
 
-                                    <input
-                                        type="text"
-                                        name="address"
-                                        defaultValue={userInfo?.address}
-                                        placeholder="Address"
-                                        className="w-full border p-3 rounded-lg"
-                                    />
+                                {/* -----------------Form-------------- */}
+                                <form onSubmit={handleUpdate} className="space-y-5">
 
-                                    <input
-                                        type="date"
-                                        name="dob"
-                                        defaultValue={userInfo?.dob}
-                                        className="w-full border p-3 rounded-lg"
-                                    />
+                                    {/*------------ Name-------------------*/}
+                                    <div className="relative">
+                                        <FaUserEdit className="absolute top-4 left-3 text-gray-400" />
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            defaultValue={userInfo?.name}
+                                            placeholder="Full Name"
+                                            className="w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition"
+                                        />
+                                    </div>
 
-                                    <div className="flex justify-end gap-3 pt-4">
+                                    {/* ----------------Addres---------------------- */}
+                                    <div className="relative">
+                                        <FaMapMarkerAlt className="absolute top-4 left-3 text-gray-400" />
+                                        <input
+                                            type="text"
+                                            name="address"
+                                            defaultValue={userInfo?.address}
+                                            placeholder="Address"
+                                            className="w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition"
+                                        />
+                                    </div>
+
+                                    {/* ---------------Date of Birth ---------------*/}
+                                    <div className="relative">
+                                        <FaCalendarAlt className="absolute top-4 left-3 text-gray-400" />
+                                        <input
+                                            type="date"
+                                            name="dob"
+                                            defaultValue={userInfo?.dob}
+                                            className="w-full pl-10 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition"
+                                        />
+                                    </div>
+
+                                    {/*--------------- Buttons---------------- */}
+                                    <div className="flex justify-end gap-4 pt-6">
+
                                         <button
                                             type="button"
                                             onClick={() => setIsOpen(false)}
-                                            className="px-4 py-2 bg-gray-400 text-white rounded-lg"
+                                            className="px-5 py-2 rounded-xl bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium transition"
                                         >
                                             Cancel
                                         </button>
 
                                         <button
                                             type="submit"
-                                            className="px-4 py-2 bg-indigo-600 text-white rounded-lg"
+                                            className="px-6 py-2 rounded-xl bg-linear-to-r from-indigo-600 to-purple-600 text-white font-semibold shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300"
                                         >
                                             Save Changes
                                         </button>
+
                                     </div>
 
                                 </form>
                             </div>
-                        </Fade>
+                        </Zoom>
                     </div>
                 )
             }
