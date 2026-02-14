@@ -13,6 +13,7 @@ import TravelPlanner from "../components/Others/TravelPlanner";
 import ProfilePageLayouts from "../Layouts/ProfilePageLayouts";
 import ManageUsers from "../components/Profile&Admin/UserManage";
 import PrivetRout from "../Auth/Privet/Privetrought";
+import UserProfile from "../components/Profile&Admin/UserProfile";
 
 
 export const router = createBrowserRouter([
@@ -65,6 +66,10 @@ export const router = createBrowserRouter([
         element: <PrivetRout><ProfilePageLayouts /></PrivetRout>,
         errorElement: <NotFound />,
         children: [
+            {
+                path: "/profilePage/profile",
+                element: <UserProfile />
+            },
             {
                 path: "/profilePage/manage-users",
                 element: <ManageUsers />

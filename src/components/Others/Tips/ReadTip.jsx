@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import { Fade, Slide } from "react-awesome-reveal";
 import { MdArrowBack, MdSearchOff } from "react-icons/md";
 import Loader from "../../Fixed/Loader";
@@ -51,15 +50,7 @@ export default function ReadTip() {
 
     return (
         <>
-            {/* ---------------- SEO META TAGS ---------------- */}
-            <Helmet>
-                <title>{tip.title} | Tourism Bangladesh</title>
-                <meta name="description" content={tip.shortDesc} />
-                <meta name="keywords" content={`${tip.category}, Bangladesh travel tips`} />
-                <meta property="og:title" content={tip.title} />
-                <meta property="og:description" content={tip.shortDesc} />
-                <meta property="og:image" content={tip.image} />
-            </Helmet>
+
 
             {/* ---------------- HERO ---------------- */}
             <section
