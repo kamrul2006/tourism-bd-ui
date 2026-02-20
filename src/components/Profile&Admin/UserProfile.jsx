@@ -11,7 +11,7 @@ const UserProfile = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { user } = useContext(AuthContext);
 
-    // Fetch user
+    // -------------Fetch user-------------
     const fetchUser = () => {
         if (!user?.email) return;
 
@@ -136,10 +136,10 @@ const UserProfile = () => {
                                 </div>
                             </div>
 
-                            {/* Divider */}
+                            {/*--------------------- Divider------------------ */}
                             <div className="my-10 border-t"></div>
 
-                            {/* Info Grid */}
+                            {/*------------------- Info Grid -------------------*/}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-slate-700">
 
                                 <Fade cascade triggerOnce>
@@ -202,7 +202,7 @@ const UserProfile = () => {
                                 </Fade>
                             </div>
 
-                            {/* Edit Button */}
+                            {/* -------------------Edit Button -----------------------*/}
                             <div className="mt-12 text-center md:text-right">
                                 <button
 

@@ -258,7 +258,7 @@ export default function ProfileNavbar() {
                     </Slide>
                 )}
             </nav>
-            {/* -------- NAVBAR END -------- */}
+
         </>
     );
 }

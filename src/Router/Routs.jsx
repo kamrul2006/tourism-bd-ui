@@ -61,6 +61,7 @@ export const router = createBrowserRouter([
         path: "/signup",
         element: <SignupPage />
     },
+    // -------------profile page section--------------------
     {
         path: "/profilePage",
         element: <PrivetRout><ProfilePageLayouts /></PrivetRout>,
