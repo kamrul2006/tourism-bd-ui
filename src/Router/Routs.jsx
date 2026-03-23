@@ -14,6 +14,7 @@ import ProfilePageLayouts from "../Layouts/ProfilePageLayouts";
 import ManageUsers from "../components/Profile&Admin/UserManage";
 import PrivetRout from "../Auth/Privet/Privetrought";
 import UserProfile from "../components/Profile&Admin/UserProfile";
+import MyPlans from "../components/Profile&Admin/MyPlans";
 
 
 export const router = createBrowserRouter([
@@ -70,6 +71,10 @@ export const router = createBrowserRouter([
             {
                 path: "/profilePage/profile",
                 element: <UserProfile />
+            },
+            {
+                path: "/profilePage/my-planes",
+                element: <MyPlans />
             },
             // -------------admin section-----------------
             {
