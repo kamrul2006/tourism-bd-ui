@@ -71,6 +71,7 @@ export const router = createBrowserRouter([
                 path: "/profilePage/profile",
                 element: <UserProfile />
             },
+            // -------------admin section-----------------
             {
                 path: "/profilePage/manage-users",
                 element: <ManageUsers />
