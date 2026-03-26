@@ -46,29 +46,35 @@ export default function MyPlans() {
                             No travel plans created yet.
                         </p>
                     ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
 
                             {plans.map((plan) => (
                                 <Fade key={plan._id} triggerOnce>
 
                                     {/* ---------------- PLAN CARD ---------------- */}
-                                    <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition overflow-hidden">
 
-                                        {/* Destination Image */}
+                                    <div
+                                        className="group relative rounded-xl overflow-hidden shadow-lg cursor-pointer transition-transform duration-300 hover:scale-105">
+                                        {/*-------- Image ------*/}
                                         <img
-                                            src={`https://source.unsplash.com/600x400/?${plan.destination}`}
+                                            src={`https://ypfbd.org/wp-content/uploads/2022/10/bangladesh_tourism.jpg`}
                                             alt={plan.destination}
-                                            className="h-48 w-full object-cover"
+
+                                            className="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110"
                                         />
 
-                                        {/* Content */}
-                                        <div className="p-5">
+                                        {/* -----Gradient Overlay------ */}
+                                        <div className="absolute inset-0 bg-linear-to-t from-black/90 to-black/10"></div>
 
-                                            {/* Destination */}
-                                            <h3 className="text-xl font-bold text-gray-800 mb-2 flex items-center gap-2">
+                                        {/* ------- Name--------- */}
+                                        <div className="absolute inset-0 flex flex-col items-start justify-end pl-2 mb-6 text-center z-10 transition-all duration-300 group-hover:-translate-y-6">
+
+                                            <h3 className="text-white text-2xl font-semibold drop-shadow flex items-center gap-4">
                                                 <FaMapMarkerAlt className="text-emerald-600" />
                                                 {plan.destination}
                                             </h3>
+
+                                            <div className="w-12 h-0.5 bg-orange-400 my-2 "></div>
 
                                             {/* Dates */}
                                             <p className="text-gray-500 flex items-center gap-2 mb-2">
@@ -94,21 +100,16 @@ export default function MyPlans() {
                                                 ))}
                                             </div>
 
-                                            {/* Buttons */}
-                                            <div className="flex justify-between">
 
-                                                <Link
-                                                    to={`/plans/${plan._id}`}
-                                                    className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm"
-                                                >
-                                                    Details
-                                                </Link>
+                                            {/* Buttons */}
+                                            <div className="flex not-even:">
 
                                                 <button
                                                     onClick={() => deletePlan(plan._id)}
-                                                    className="text-red-500 hover:text-red-700 text-sm"
-                                                >
-                                                    Delete
+                                                    className="w-full  bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-xl shadow-lg transition duration-300 hover:scale-105">
+
+
+                                                    Cancel The Trip
                                                 </button>
 
                                             </div>
