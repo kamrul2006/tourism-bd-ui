@@ -24,13 +24,13 @@ export default function MyPlans() {
             <div
                 className="relative h-70 md:h-85 bg-cover bg-center"
                 style={{
-                    backgroundImage: "url('/images/profile-hero.jpg')",
+                    backgroundImage: "url('/images/phbg.png')",
                 }}
             >
                 <div className="absolute inset-0 bg-black/50"></div>
 
                 <div className="relative z-10 h-full flex items-center max-w-7xl mx-auto px-6">
-                    <h1 className="text-white text-4xl md:text-5xl font-bold">
+                    <h1 className="text-white text-4xl md:text-6xl font-bold chicleRegular">
                         My Plans
                     </h1>
                 </div>
@@ -42,9 +42,15 @@ export default function MyPlans() {
                 <div className="bg-white/90 backdrop-blur-xl shadow-2xl rounded-3xl p-6 md:p-10">
 
                     {plans.length === 0 ? (
-                        <p className="text-center text-gray-500 text-lg">
-                            No travel plans created yet.
-                        </p>
+                        <div className="text-center text-gray-500 text-lg">
+
+                            <img src="../../../public/Icons/abcd.gif" alt="pln" className="mx-auto w-1/2" />
+
+                            <p className="text-2xl md:text-4xl mb-5 text-center text-emerald-900 chicleRegular">
+                                No travel plans created yet.
+                            </p>
+
+                        </div>
                     ) : (
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
 
@@ -67,15 +73,16 @@ export default function MyPlans() {
                                         {/* -----Gradient Overlay------ */}
                                         <div className="absolute inset-0 bg-linear-to-t from-black to-black/10"></div>
 
-                                        {/* ------- Name--------- */}
+                                        {/* --------card constant----------- */}
                                         <div className="absolute inset-0 flex flex-col items-start justify-end px-2 mb-6 text-center z-10 transition-all duration-300 group-hover:-translate-y-3">
 
-                                            <h3 className="text-white text-2xl font-semibold drop-shadow flex items-center gap-2">
+                                            {/* ------- Name--------- */}
+                                            <h3 className="text-white text-3xl drop-shadow flex items-center gap-1 chicleRegular">
                                                 <FaMapMarkerAlt className="text-orange-600" />
                                                 {plan.destination}
                                             </h3>
 
-                                            <div className="w-20 h-0.5 bg-orange-400 my-2 transition-all duration-300 group-hover:w-44 "></div>
+                                            <div className="w-20 h-0.5 bg-orange-500 my-2 transition-all duration-300 group-hover:w-48 "></div>
 
                                             {/*------ Dates------ */}
                                             <p className="text-white font-bold flex items-center gap-2 mb-1 ">
