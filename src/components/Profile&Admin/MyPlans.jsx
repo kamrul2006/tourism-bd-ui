@@ -74,16 +74,16 @@ export default function MyPlans() {
                                                 {plan.destination}
                                             </h3>
 
-                                            <div className="w-12 h-0.5 bg-orange-400 my-2 "></div>
+                                            <div className="w-20 h-0.5 bg-orange-400 my-2 "></div>
 
-                                            {/* Dates */}
-                                            <p className="text-gray-500 flex items-center gap-2 mb-2">
+                                            {/*------ Dates------ */}
+                                            <p className="text-white font-bold flex items-center gap-2 mb-1 ">
                                                 <FaCalendarAlt />
                                                 {plan.startDate} → {plan.endDate}
                                             </p>
 
                                             {/* Budget */}
-                                            <p className="text-gray-600 flex items-center gap-2 mb-3">
+                                            <p className="text-white font-black flex items-center gap-2 mb-1">
                                                 <FaMoneyBill className="text-orange-500" />
                                                 Budget: {plan.budgetRange}
                                             </p>
@@ -106,8 +106,7 @@ export default function MyPlans() {
 
                                                 <button
                                                     onClick={() => deletePlan(plan._id)}
-                                                    className="w-full  bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-xl shadow-lg transition duration-300 hover:scale-105">
-
+                                                    className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-xl shadow-lg transition duration-300 hover:scale-105">
 
                                                     Cancel The Trip
                                                 </button>
