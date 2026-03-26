@@ -55,6 +55,7 @@ export default function MyPlans() {
 
                                     <div
                                         className="group relative rounded-xl overflow-hidden shadow-lg cursor-pointer transition-transform duration-300 hover:scale-105">
+
                                         {/*-------- Image ------*/}
                                         <img
                                             src={`https://ypfbd.org/wp-content/uploads/2022/10/bangladesh_tourism.jpg`}
@@ -64,13 +65,13 @@ export default function MyPlans() {
                                         />
 
                                         {/* -----Gradient Overlay------ */}
-                                        <div className="absolute inset-0 bg-linear-to-t from-black/90 to-black/10"></div>
+                                        <div className="absolute inset-0 bg-linear-to-t from-black to-black/10"></div>
 
                                         {/* ------- Name--------- */}
-                                        <div className="absolute inset-0 flex flex-col items-start justify-end pl-2 mb-6 text-center z-10 transition-all duration-300 group-hover:-translate-y-6">
+                                        <div className="absolute inset-0 flex flex-col items-start justify-end px-2 mb-6 text-center z-10 transition-all duration-300 group-hover:-translate-y-3">
 
-                                            <h3 className="text-white text-2xl font-semibold drop-shadow flex items-center gap-4">
-                                                <FaMapMarkerAlt className="text-emerald-600" />
+                                            <h3 className="text-white text-2xl font-semibold drop-shadow flex items-center gap-2">
+                                                <FaMapMarkerAlt className="text-orange-600" />
                                                 {plan.destination}
                                             </h3>
 
@@ -102,16 +103,12 @@ export default function MyPlans() {
 
 
                                             {/* Buttons */}
-                                            <div className="flex not-even:">
+                                            <button
+                                                onClick={() => deletePlan(plan._id)}
+                                                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-1 px-6 rounded-xl shadow-lg transition duration-300">
+                                                Cancel The Trip
+                                            </button>
 
-                                                <button
-                                                    onClick={() => deletePlan(plan._id)}
-                                                    className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-xl shadow-lg transition duration-300 hover:scale-105">
-
-                                                    Cancel The Trip
-                                                </button>
-
-                                            </div>
                                         </div>
                                     </div>
 
