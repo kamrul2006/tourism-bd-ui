@@ -75,16 +75,16 @@ export default function MyPlans() {
                                                 {plan.destination}
                                             </h3>
 
-                                            <div className="w-20 h-0.5 bg-orange-400 my-2 "></div>
+                                            <div className="w-20 h-0.5 bg-orange-400 my-2 transition-all duration-300 group-hover:w-44 "></div>
 
                                             {/*------ Dates------ */}
                                             <p className="text-white font-bold flex items-center gap-2 mb-1 ">
-                                                <FaCalendarAlt />
+                                                <FaCalendarAlt className="text-orange-600" />
                                                 {plan.startDate} → {plan.endDate}
                                             </p>
 
                                             {/* Budget */}
-                                            <p className="text-white font-black flex items-center gap-2 mb-1">
+                                            <p className="text-white font-bold flex items-center gap-2 mb-1">
                                                 <FaMoneyBill className="text-orange-500" />
                                                 Budget: {plan.budgetRange}
                                             </p>
@@ -94,7 +94,7 @@ export default function MyPlans() {
                                                 {plan.preferences.map((pref, index) => (
                                                     <span
                                                         key={index}
-                                                        className="bg-emerald-100 text-emerald-700 text-xs px-3 py-1 rounded-full"
+                                                        className="bg-orange-100 text-orange-700 text-xs px-3 py-1 rounded-full"
                                                     >
                                                         {pref}
                                                     </span>
